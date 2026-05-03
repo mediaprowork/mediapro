@@ -2,14 +2,18 @@ import { defineConfig, envField, fontProviders } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
+import cloudflare from '@astrojs/cloudflare';
+
 export default defineConfig({
   site: 'https://mediapro.work',
   output: 'static',
   trailingSlash: 'never',
+
   build: {
     inlineStylesheets: 'auto',
     format: 'directory',
   },
+
   integrations: [
     sitemap({
       changefreq: 'weekly',
@@ -34,9 +38,11 @@ export default defineConfig({
       },
     }),
   ],
+
   vite: {
     plugins: [tailwindcss()],
   },
+
   fonts: [
     {
       provider: fontProviders.google(),
@@ -57,6 +63,7 @@ export default defineConfig({
       display: 'swap',
     },
   ],
+
   env: {
     schema: {
       PUBLIC_SITE_URL: envField.string({ context: 'client', access: 'public', default: 'https://mediapro.work' }),
@@ -68,4 +75,6 @@ export default defineConfig({
       PUBLIC_BING_VERIFICATION: envField.string({ context: 'client', access: 'public', optional: true }),
     },
   },
+
+  adapter: cloudflare(),
 });
