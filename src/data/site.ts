@@ -45,6 +45,10 @@ export const SITE = {
     seoRetainer: 1200,
     consultingHourly: 200,
   },
+  analytics: {
+    gaId: 'G-DT7CCBXE4Z',
+    gscVerification: 'YKisg7URFTkL0ORHmTk0q9e7N01bbZHMgubkqFdoGI8',
+  },
 } as const;
 
 export type Site = typeof SITE;

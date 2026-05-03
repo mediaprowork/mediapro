@@ -1,22 +1,14 @@
 ---
-// GA4 — reads from import.meta.env (baked at build time by Cloudflare/Netlify build system)
-// Set PUBLIC_GA_ID in Cloudflare Pages → Settings → Environment Variables
-const gaId = import.meta.env.PUBLIC_GA_ID;
+import { SITE } from '~/data/site';
+const { gaId } = SITE.analytics;
 ---
-{gaId && (
-  <>
-    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
-    <script is:inline define:vars={{ gaId }}>
-      (function () {
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { window.dataLayer.push(arguments); }
-        window.gtag = gtag; // expose globally so other scripts can call gtag()
-        gtag('js', new Date());
-        gtag('config', gaId, {
-          send_page_view: true,
-          cookie_flags: 'SameSite=None;Secure',
-        });
-      })();
-    </script>
-  </>
-)}
+<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+<script is:inline define:vars={{ gaId }}>
+  (function () {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', gaId, { send_page_view: true });
+  })();
+</script>
