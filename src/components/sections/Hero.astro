@@ -1,7 +1,8 @@
 ---
 import Reveal from '~/components/ui/Reveal.astro';
 import Icon from '~/components/icons/Icon.astro';
-import { SITE } from '~/data/site';
+import { SITE, waUrl } from '~/data/site';
+const waHeroUrl = waUrl(`Hi Media Pro, I'd like to schedule a free consultation.`);
 ---
 <section class="hero" id="top" aria-labelledby="hero-heading">
   <div class="container">
@@ -26,7 +27,7 @@ import { SITE } from '~/data/site';
             <Icon name="arrow-right" size={14} />
           </a>
           <a
-            href={`${SITE.waLink}?text=${encodeURIComponent("Hi, I'd like to schedule a free consultation")}`}
+            href={waHeroUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn-ghost"

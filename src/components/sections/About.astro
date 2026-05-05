@@ -1,6 +1,8 @@
 ---
 import Reveal from '~/components/ui/Reveal.astro';
 import Icon from '~/components/icons/Icon.astro';
+import { waUrl } from '~/data/site';
+const waAboutUrl = waUrl(`Hi Media Pro, I'd like to learn more about your digital marketing services.`);
 ---
 <section id="about" aria-labelledby="about-heading">
   <div class="container">
@@ -30,7 +32,7 @@ import Icon from '~/components/icons/Icon.astro';
         </Reveal>
 
         <Reveal delay={4}>
-          <a href="https://wa.me/6285129992227" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <a href={waAboutUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             Contact us
             <Icon name="arrow-right" size={14} />
           </a>
