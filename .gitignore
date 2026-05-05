@@ -16,3 +16,9 @@ pnpm-debug.log*
 .claude/
 docs/
 mediapro-v2-astro-bun-superprompt.md
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
