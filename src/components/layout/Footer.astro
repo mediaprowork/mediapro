@@ -1,6 +1,7 @@
 ---
 import Icon from '~/components/icons/Icon.astro';
-import { SITE } from '~/data/site';
+import { SITE, waUrl } from '~/data/site';
+const waChatUrl = waUrl(`Hi Media Pro, I'd like to chat about your services.`);
 ---
 <footer class="site-footer">
   <div class="container">
@@ -13,15 +14,13 @@ import { SITE } from '~/data/site';
       </div>
       <div><h5>Services</h5><ul><li>Web Development</li><li>Google Ads Services</li><li>Meta Ads Services</li><li>Consulting Services</li></ul></div>
       <div><h5>Company</h5><ul><li><a href="/terms">Terms</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li></ul></div>
-      <div><h5>Contact</h5><ul><li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li><li><a href={SITE.waLink} target="_blank" rel="noopener noreferrer">WhatsApp · chat now</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li><li><a href={waChatUrl} target="_blank" rel="noopener noreferrer">{SITE.phoneDisplay} — chat now</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span>© <time datetime="2026">2026</time> {SITE.legalName}. All rights reserved.</span>
       <div class="socials">
-        <a href={SITE.social.instagram} aria-label="Instagram"><Icon name="instagram" size={16} /></a>
-        <a href={SITE.social.linkedin} aria-label="LinkedIn"><Icon name="linkedin" size={16} /></a>
-        <a href={SITE.social.x} aria-label="X / Twitter"><Icon name="x" size={16} /></a>
-        <a href={SITE.social.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><Icon name="whatsapp" size={16} /></a>
+        <a href={SITE.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Icon name="instagram" size={16} /></a>
+        <a href={SITE.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Icon name="linkedin" size={16} /></a>
       </div>
     </div>
   </div>

@@ -11,6 +11,7 @@ export const SITE = {
   founded: '2014',
   email: 'admin@mediapro.work',
   phone: '+62-851-2999-2227',
+  phoneDisplay: '+62 851-2999-2227',
   waNumber: '6285129992227',
   waLink: 'https://wa.me/6285129992227',
   hours: '09:00–19:00 + Global · 24/7 async',
@@ -20,10 +21,8 @@ export const SITE = {
   themeColor: '#FFB804',
   ogImage: '/og-default.png',
   social: {
-    instagram: '#',
-    linkedin: '#',
-    x: '#',
-    whatsapp: 'https://wa.me/6285129992227',
+    instagram: 'https://www.instagram.com/mediapro.idn/',
+    linkedin: 'https://www.linkedin.com/in/pt-media-pro-indonesia-2b85b2333/',
   },
   stats: {
     yearsExperience: '10+',
@@ -52,3 +51,12 @@ export const SITE = {
 } as const;
 
 export type Site = typeof SITE;
+
+/**
+ * Build a WhatsApp deep link with a pre-filled greeting message.
+ * Use context-appropriate greetings (e.g., "I'd like to discuss a project").
+ */
+export function waUrl(greeting?: string): string {
+  if (!greeting) return SITE.waLink;
+  return `${SITE.waLink}?text=${encodeURIComponent(greeting)}`;
+}
