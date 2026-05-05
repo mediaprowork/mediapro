@@ -20,9 +20,8 @@ export const SITE = {
   themeColor: '#FFB804',
   ogImage: '/og-default.png',
   social: {
-    instagram: '#',
-    linkedin: '#',
-    x: '#',
+    instagram: 'https://www.instagram.com/mediapro.idn/',
+    linkedin: 'https://www.linkedin.com/in/pt-media-pro-indonesia-2b85b2333/',
     whatsapp: 'https://wa.me/6285129992227',
   },
   stats: {
