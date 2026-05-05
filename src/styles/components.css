@@ -509,14 +509,14 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
   display: flex; align-items: center; justify-content: center;
   min-height: 420px;
 }
-.phone-stage .ring {
+.phone-stage .stage-ring {
   position: absolute;
   border: 1px solid var(--line);
   border-radius: 50%;
 }
-.phone-stage .ring-1 { width: 400px; height: 400px; }
-.phone-stage .ring-2 { width: 290px; height: 290px; border-color: var(--line-strong); }
-.phone-stage .ring-3 {
+.phone-stage .stage-ring-1 { width: 400px; height: 400px; }
+.phone-stage .stage-ring-2 { width: 290px; height: 290px; border-color: var(--line-strong); }
+.phone-stage .stage-ring-3 {
   width: 185px; height: 185px;
   border-color: rgba(255, 184, 4, 0.55);
   border-style: dashed;
@@ -1159,9 +1159,9 @@ section { padding: clamp(48px, 6vw, 80px) 0; }
 @media (max-width: 860px) {
   .hero-grid { grid-template-columns: 1fr; gap: 36px; }
   .phone-stage { min-height: 280px; }
-  .phone-stage .ring-1 { width: 280px; height: 280px; }
-  .phone-stage .ring-2 { width: 200px; height: 200px; }
-  .phone-stage .ring-3 { width: 130px; height: 130px; }
+  .phone-stage .stage-ring-1 { width: 280px; height: 280px; }
+  .phone-stage .stage-ring-2 { width: 200px; height: 200px; }
+  .phone-stage .stage-ring-3 { width: 130px; height: 130px; }
   .phone-stage .phone { width: clamp(140px, 36vw, 200px); }
   .hero-meta { gap: 20px; }
   .hero-actions { gap: 10px; }
@@ -1185,9 +1185,9 @@ section { padding: clamp(48px, 6vw, 80px) 0; }
   .hero-meta .m { min-width: 80px; }
   .hero-meta .m strong { font-size: 22px; }
   .phone-stage { min-height: 220px; }
-  .phone-stage .ring-1 { width: 220px; height: 220px; }
-  .phone-stage .ring-2 { width: 160px; height: 160px; }
-  .phone-stage .ring-3 { width: 104px; height: 104px; }
+  .phone-stage .stage-ring-1 { width: 220px; height: 220px; }
+  .phone-stage .stage-ring-2 { width: 160px; height: 160px; }
+  .phone-stage .stage-ring-3 { width: 104px; height: 104px; }
   .chip { font-size: 10.5px; padding: 6px 9px; }
 
   /* Trusted */
