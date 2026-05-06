@@ -1,0 +1,8 @@
+[
+  { "id": "web-dev", "num": "01", "icon": "rocket", "title": "网站开发", "desc": "为您的品牌量身打造快速、现代且专注于转化的网站。", "longDesc": "Media Pro 使用现代框架构建生产级网站——从落地页到完整的自定义 Web 应用。每个网站均具备 SEO 就绪、移动端优先的特点，致力于将访客转化为客户。", "keyOutcome": "客户在新网站上线后 90 天内通常可获得多达 3 倍的潜在客户增长。" },
+  { "id": "meta-ads", "num": "02", "icon": "people", "title": "Meta 广告", "desc": "通过精准的广告投放，在 Facebook 和 Instagram 上触达您的理想受众。", "longDesc": "Media Pro 全漏斗管理 Meta 广告——从受众研究和创意制作到 A/B 测试与效果扩量。管理服务起价为 USD 750/月，另加广告费用。", "keyOutcome": "所有托管 Meta 广告活动的平均转化率提升达 45%。" },
+  { "id": "google-ads", "num": "03", "icon": "search", "title": "Google 广告", "desc": "在高意向客户搜索您的那一刻，精准捕获商机。", "longDesc": "全流程管理搜索、展示、购物及 Performance Max 广告活动。Media Pro 通过持续优化构建最大化广告支出回报率（ROAS）的广告系列。起价为 USD 750/月，另加广告费用。", "keyOutcome": "客户在 60 天内持续实现高于行业基准的 ROAS。" },
+  { "id": "consulting", "num": "04", "icon": "compass", "title": "商业咨询", "desc": "获取专业战略指导，加速业务增长，强化竞争优势。", "longDesc": "Media Pro 咨询服务涵盖数字战略审计、增长路线图、营销技术栈评审及市场进入规划。可选择按小时咨询（USD 200/小时）或定制战略服务包。", "keyOutcome": "完成战略审计的客户平均减少 35% 的广告浪费支出。" },
+  { "id": "seo", "num": "05", "icon": "chart", "title": "SEO", "desc": "主导搜索排名，为您的业务带来可持续的自然流量增长。", "longDesc": "Media Pro 的 SEO 服务涵盖技术审计、页面优化、外链建设和内容策略。长期服务协议起价为 USD 1,200/月，3–6 个月内可见显著改善。", "keyOutcome": "客户组合中记录的自然流量平均增长达 180%。" },
+  { "id": "server", "num": "06", "icon": "cloud", "title": "服务器维护", "desc": "通过主动式管理，保持您的基础设施快速、安全且始终在线。", "longDesc": "Media Pro 负责服务器配置、性能监控、安全补丁、备份管理和正常运行时间优化。无论是 AWS、DigitalOcean 还是自定义 VPS——我们确保您的技术栈始终处于最佳性能状态。", "keyOutcome": "所有托管服务器环境均保持 99.9% 的正常运行时间。" }
+]

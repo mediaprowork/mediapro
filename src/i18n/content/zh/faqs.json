@@ -1,0 +1,19 @@
+[
+  { "id": "what-is-media-pro", "category": "general", "question": "Media Pro 是什么？你们有什么独特之处？", "answer": "Media Pro 是一家高端数字营销工作室，拥有超过 10 年帮助品牌通过 SEO、付费广告、网站开发和咨询实现增长的经验。", "expandedAnswer": "我们的与众不同之处在于：我们不使用模板化的广告系列。每项策略都是围绕您的业务、受众和目标量身定制的——我们对数据保持高度专注，以便持续优化。" },
+  { "id": "industries", "category": "general", "question": "你们服务哪些行业？", "answer": "我们曾服务于电商、SaaS、餐饮、房地产、医疗健康、教育、时尚和 B2B 服务等多个行业。", "expandedAnswer": "我们的方法论可适应任何行业，但我们尤其喜欢与注重品牌和长期增长（而非仅追求短期收益）的创始人及营销团队合作。" },
+  { "id": "international", "category": "general", "question": "你们是否服务国际客户？", "answer": "当然——国际客户占我们业务的大多数。我们与北美、欧洲、英国、中东、澳大利亚和亚太地区的品牌合作。", "expandedAnswer": "所有工作均以英语进行，所有发票均以美元计价，我们保持灵活的会议时间，能与大多数主要时区重叠。" },
+  { "id": "cancel", "category": "general", "question": "我可以随时取消服务协议吗？", "answer": "可以。在最初 3 个月的承诺期之后，服务协议按月滚动，取消需提前 30 天通知。", "expandedAnswer": "我们不相信捆绑客户——如果我们没有提供价值，您应该有自由离开。" },
+  { "id": "services-offered", "category": "services", "question": "你们提供哪些服务？", "answer": "我们的四项核心服务是：网站开发、Google 广告服务、Meta 广告服务和咨询服务。", "expandedAnswer": "在这些服务中，我们涵盖 SEO、社交媒体营销、内容创作、电子邮件营销、网红营销、分析和报告。大多数客户将 2–3 项服务组合成一个协同的增长策略。" },
+  { "id": "web-stack", "category": "services", "question": "你们使用 WordPress、Webflow 还是自定义代码构建网站？", "answer": "三者都有，取决于项目需求。WordPress 用于内容丰富的网站，Webflow 用于有强烈设计需求的营销网站，自定义代码（Next.js / React）用于复杂应用程序。", "expandedAnswer": "我们会在发现阶段推荐合适的技术栈。" },
+  { "id": "cost", "category": "pricing", "question": "你们的服务收费是多少？", "answer": "网站开发起价：落地页 USD 1,500，营销网站 USD 4,500，定制项目 USD 12,000+。Google 广告和 Meta 广告管理起价为 USD 750/月，另加您的广告费用。", "expandedAnswer": "SEO 服务协议起价为 USD 1,200/月。咨询费为 USD 200/小时。我们总是在发现通话后给出精确报价。" },
+  { "id": "min-budget", "category": "pricing", "question": "Google 或 Meta 广告的最低预算是多少？", "answer": "我们建议每月最低广告支出为 USD 1,500 以获得有意义的结果，另加每月起价 USD 750 的管理费。", "expandedAnswer": "较小的预算也是可行的，但可能会限制测试速度以及我们快速优化所需的数据量。" },
+  { "id": "project-vs-retainer", "category": "pricing", "question": "你们提供一次性项目还是仅提供月度服务协议？", "answer": "两者都有。网站开发和一次性广告活动通常采用固定价格和里程碑的项目制。", "expandedAnswer": "SEO、付费广告和内容营销作为月度服务协议效果最佳，因为它们需要持续优化。" },
+  { "id": "payments", "category": "pricing", "question": "如何付款？", "answer": "项目制：开始时支付 50% 定金，完成时支付剩余 50%。月度协议：每月 1 日开具发票，14 天内付款（NET-14）。", "expandedAnswer": "我们接受 SWIFT/Wise、Stripe 和 PayPal。所有发票均以美元计价。广告费用直接通过您的绑定银行卡支付给平台。" },
+  { "id": "onboarding", "category": "process", "question": "入职流程是怎样的？", "answer": "第 1 步：30 分钟的发现通话。第 2 步：3 个工作日内提供定制方案。第 3 步：签署协议后进行 90 分钟策略工作坊。第 4 步：首批交付物通常在 2 周内完成。" },
+  { "id": "team", "category": "process", "question": "我日常会与谁合作？", "answer": "您将获得一位专属客户负责人作为主要联系人，同时可通过 Slack 或共享项目频道直接联系专业人员。", "expandedAnswer": "不外包给初级团队成员——向您进行提案的人就是实际执行工作的人。" },
+  { "id": "reporting", "category": "process", "question": "你们如何汇报广告活动表现？", "answer": "您每月将收到一份包含关键指标、洞察和下一步建议的绩效报告——另加 24/7 实时访问 Looker Studio 数据看板。", "expandedAnswer": "我们每季度举行一次会议，回顾策略并调整方向。" },
+  { "id": "ownership", "category": "process", "question": "项目结束后，我会拥有所有交付成果吗？", "answer": "是的。最终付款后，所有交付成果——网站、广告创意、内容、品牌资产——均归您所有，包括源文件。", "expandedAnswer": "您还保留以您的业务身份设立的所有平台账户（Google 广告、Meta、Analytics）的完整所有权。" },
+  { "id": "seo-timeline", "category": "results", "question": "SEO 需要多长时间才能见效？", "answer": "大多数客户在 3–6 个月内看到有意义的改善，在 6–12 个月内取得显著成果。", "expandedAnswer": "确切的时间线取决于竞争程度、您的起始状态和服务范围。我们每月分享进度报告。" },
+  { "id": "guarantee", "category": "results", "question": "你们能保证 Google 排名第一吗？", "answer": "不能，任何声称能保证的机构都应该引起您的警惕。Google 的算法有 200 多个排名因素，其中许多超出我们的控制范围。", "expandedAnswer": "我们能保证的是：经过验证的 SEO 最佳实践、透明的报告和持续的优化。91,000+ 个项目，4.7 分评分。" },
+  { "id": "underperforming", "category": "results", "question": "如果广告活动表现不佳，会怎么处理？", "answer": "我们每天监控广告活动。如果出现表现不佳的情况，我们会立即诊断问题、提出假设并测试解决方案。", "expandedAnswer": "我们始终对哪些有效、哪些无效保持透明。营销是一门迭代的科学。" }
+]
