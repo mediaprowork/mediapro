@@ -17,7 +17,7 @@ if (lang === 'en') {
     .map((s) => ({ data: s.data as ServiceData }))
     .sort((a, b) => a.data.num.localeCompare(b.data.num));
 } else {
-  const mod = await import(`~/i18n/content/${lang}/services.json`);
+  const mod = await import(`../../i18n/content/${lang}/services.json`);
   services = (mod.default as ServiceData[])
     .sort((a, b) => a.num.localeCompare(b.num))
     .map((data) => ({ data }));

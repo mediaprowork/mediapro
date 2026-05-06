@@ -20,8 +20,11 @@ export const onRequest = defineMiddleware(async (context, next) => {
     ? (stored as Lang)
     : null;
 
-  // CF-IPCountry header from Cloudflare Workers (free, no API key)
+  // CF-IPCountry header from Cloudflare Workers (free, no API key).
+  // If absent, we're in build-time prerender or local dev — skip redirect.
   const country = request.headers.get('CF-IPCountry');
+  if (!country) return next();
+
   const detected: Lang = validStored ?? detectLocale(country);
 
   // Determine locale from current URL path

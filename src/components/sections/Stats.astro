@@ -13,7 +13,7 @@ if (lang === 'en') {
   const enCol = await getCollection('stats');
   stats = enCol.map((s) => ({ data: s.data as StatData }));
 } else {
-  const mod = await import(`~/i18n/content/${lang}/stats.json`);
+  const mod = await import(`../../i18n/content/${lang}/stats.json`);
   stats = (mod.default as StatData[]).map((data) => ({ data }));
 }
 ---

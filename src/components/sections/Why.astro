@@ -15,7 +15,7 @@ if (lang === 'en') {
   const enCol = await getCollection('reasons');
   reasons = enCol.map((r) => ({ data: r.data as ReasonData }));
 } else {
-  const mod = await import(`~/i18n/content/${lang}/reasons.json`);
+  const mod = await import(`../../i18n/content/${lang}/reasons.json`);
   reasons = (mod.default as ReasonData[]).map((data) => ({ data }));
 }
 ---
