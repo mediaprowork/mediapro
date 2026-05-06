@@ -1,8 +1,9 @@
 ---
 import Icon from '~/components/icons/Icon.astro';
 import { SITE } from '~/data/site';
-interface Props { active?: 'home'|'about'|'services'|'contact'; homeBase?: string }
-const { active, homeBase = '/' } = Astro.props;
+import type { Lang } from '~/i18n/index';
+interface Props { active?: 'home'|'about'|'services'|'contact'; homeBase?: string; lang?: Lang; }
+const { active, homeBase = '/', lang = 'en' } = Astro.props;
 ---
 
 <header class="site-header" role="banner">

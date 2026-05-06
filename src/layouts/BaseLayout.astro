@@ -9,6 +9,7 @@ import ThemeToggle from '~/components/ui/ThemeToggle.astro';
 import { organizationSchema } from '~/data/schemas/organization';
 import { websiteSchema } from '~/data/schemas/website';
 import { SITE } from '~/data/site';
+import type { Lang } from '~/i18n/index';
 import '~/styles/global.css';
 interface Props {
   title: string; description: string; canonical?: string; ogImage?: string;
@@ -16,11 +17,12 @@ interface Props {
   active?: 'home'|'about'|'services'|'contact';
   schemas?: unknown[]; preloadHero?: boolean;
   keywords?: string;
+  lang?: Lang;
 }
-const { title, description, canonical, ogImage, ogType, noindex, active, schemas = [], preloadHero = false, keywords } = Astro.props;
+const { title, description, canonical, ogImage, ogType, noindex, active, schemas = [], preloadHero = false, keywords, lang = 'en' } = Astro.props;
 ---
 <!doctype html>
-<html lang="en">
+<html lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
   <head>
     <script is:inline>
       (function(){
@@ -41,6 +43,8 @@ const { title, description, canonical, ogImage, ogType, noindex, active, schemas
     <BaseSEO {title} {description} {canonical} {ogImage} {ogType} {noindex} {keywords} />
     <Font cssVariable="--font-display" preload />
     <Font cssVariable="--font-body" preload />
+    {lang === 'ar' && <Font cssVariable="--font-arabic" preload />}
+    {lang === 'zh' && <Font cssVariable="--font-cjk" preload />}
     {preloadHero && (
       <>
         <link rel="preload" as="image" href="/images/hero-phone.png" fetchpriority="high" media="(prefers-color-scheme: light)" />
@@ -57,7 +61,7 @@ const { title, description, canonical, ogImage, ogType, noindex, active, schemas
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to main content</a>
-    <Header active={active} />
+    <Header active={active} lang={lang} />
     <main id="main"><slot /></main>
     <Footer />
     <ThemeToggle />
