@@ -1,0 +1,63 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/sections/Hero.astro';
+import Marquee from '~/components/sections/Marquee.astro';
+import About from '~/components/sections/About.astro';
+import ServicesIntro from '~/components/sections/ServicesIntro.astro';
+import Services from '~/components/sections/Services.astro';
+import Cta from '~/components/sections/Cta.astro';
+import Stats from '~/components/sections/Stats.astro';
+import Why from '~/components/sections/Why.astro';
+import Testimonials from '~/components/sections/Testimonials.astro';
+import FooterCta from '~/components/sections/FooterCta.astro';
+import { professionalServiceSchema } from '~/data/schemas/professional-service';
+import { serviceCatalogSchema } from '~/data/schemas/service-catalog';
+import { faqPageSchema } from '~/data/schemas/faq-page';
+import { productReviewSchema } from '~/data/schemas/product-review';
+import { breadcrumbSchema } from '~/data/schemas/breadcrumb';
+import { webPageSchema } from '~/data/schemas/webpage';
+import { serviceOfferSchemas } from '~/data/schemas/services-offer';
+import { SITE } from '~/data/site';
+import { useTranslations } from '~/i18n/index';
+import { getCollection } from 'astro:content';
+
+const lang = 'zh' as const;
+const t = await useTranslations(lang);
+const testimonials = await getCollection('testimonials');
+
+const homepageFaqs = [
+  { question: 'Media Pro 提供哪些数字营销服务?', answer: 'Media Pro 提供网站开发、Google 广告服务、Meta 广告服务、SEO、社交媒体营销、内容营销、邮件营销、网红营销、数据分析与报告以及咨询服务。' },
+  { question: 'Media Pro 有多少经验?', answer: 'Media Pro 拥有超过 10 年的数字营销经验,已为 84,000+ 满意客户交付 91,000+ 项目,客户评分达 4.7。' },
+  { question: '如何联系 Media Pro 进行咨询?', answer: '您可以发送邮件至 admin@mediapro.work 或通过 WhatsApp 联系我们获取免费咨询。我们与全球客户合作,在 4 个工作小时内回复。' },
+  { question: 'Media Pro 是否服务小型企业?', answer: '是的。我们的解决方案对各种规模的企业都灵活且可扩展 — 从新兴品牌到企业级客户。' },
+];
+
+const schemas = [
+  webPageSchema({ url: `${SITE.url}/zh`, title: t('meta.homepage_title'), description: t('meta.homepage_desc'), speakable: true }),
+  professionalServiceSchema,
+  serviceCatalogSchema,
+  faqPageSchema(homepageFaqs),
+  productReviewSchema(testimonials.map((tt) => ({ quote: tt.data.quote, name: tt.data.name, role: tt.data.role }))),
+  breadcrumbSchema([{ label: t('nav.home'), href: '/zh' }]),
+  ...serviceOfferSchemas,
+];
+---
+<BaseLayout
+  title={t('meta.homepage_title')}
+  description={t('meta.homepage_desc')}
+  active="home"
+  schemas={schemas}
+  preloadHero={true}
+  lang={lang}
+>
+  <Hero lang={lang} />
+  <Marquee lang={lang} />
+  <About lang={lang} />
+  <ServicesIntro lang={lang} />
+  <Services lang={lang} />
+  <Cta lang={lang} />
+  <Stats lang={lang} />
+  <Why lang={lang} />
+  <Testimonials lang={lang} />
+  <FooterCta lang={lang} />
+</BaseLayout>

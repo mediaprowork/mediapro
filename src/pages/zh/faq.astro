@@ -1,0 +1,68 @@
+---
+import SubpageLayout from '~/layouts/SubpageLayout.astro';
+import { breadcrumbSchema } from '~/data/schemas/breadcrumb';
+import { faqPageSchema } from '~/data/schemas/faq-page';
+import { useTranslations } from '~/i18n/index';
+import faqsZh from '~/i18n/content/zh/faqs.json';
+
+const lang = 'zh' as const;
+const t = await useTranslations(lang);
+const cats: ('all'|'general'|'services'|'pricing'|'process'|'results')[] = ['all','general','services','pricing','process','results'];
+
+type FaqEntry = { id: string; category: string; question: string; answer: string; expandedAnswer?: string };
+const faqs = faqsZh as FaqEntry[];
+
+const schemas = [
+  breadcrumbSchema([{ label: t('nav.home'), href: '/zh' }, { label: 'FAQ' }]),
+  faqPageSchema(faqs.map((f) => ({ question: f.question, answer: f.answer, expandedAnswer: f.expandedAnswer }))),
+];
+---
+<SubpageLayout
+  title={t('meta.faq_title')}
+  description={t('meta.faq_desc')}
+  schemas={schemas}
+  pageTitle={`${t('faq_page.title')} <span class="accent">${t('faq_page.title_accent')}</span>`}
+  pageLede={t('faq_page.lede')}
+  crumbs={[{ label: t('nav.home'), href: '/zh' }, { label: 'FAQ' }]}
+  lang={lang}
+>
+  <section class="subpage-body">
+    <div class="container" style="max-width:920px;">
+      <div class="faq-categories" id="faqCats">
+        {cats.map((c, i) => (
+          <button type="button" class:list={['faq-cat', i === 0 && 'is-active']} data-cat={c}>
+            {t(`faq_page.cat_${c}`)}
+          </button>
+        ))}
+      </div>
+
+      <div class="faq-list" id="faqList">
+        {faqs.map((f) => (
+          <div class="faq-item" data-cat={f.category}>
+            <button class="faq-q" type="button" aria-expanded="false">
+              <span>{f.question}</span>
+              <span class="toggle" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a">
+              <div class="faq-a-inner">
+                <p>{f.answer}</p>
+                {f.expandedAnswer && <p>{f.expandedAnswer}</p>}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div style="margin-top:48px;text-align:center;padding:32px 24px;background:var(--bg-soft);border-radius:var(--radius);">
+        <h3 style="font-family:var(--font-display);font-size:24px;margin:0 0 12px;">{t('faq_page.still_questions')}</h3>
+        <p style="margin:0 0 20px;color:var(--ink-soft);">{t('faq_page.still_questions_sub')}</p>
+        <a href="/zh/contact" class="btn btn-primary">{t('faq_page.contact_us')}</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import '~/lib/faq-filter';
+    import '~/lib/faq-accordion';
+  </script>
+</SubpageLayout>
