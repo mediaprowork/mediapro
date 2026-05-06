@@ -1,20 +1,35 @@
 ---
+import type { Lang } from '~/i18n/index';
+import { useTranslations } from '~/i18n/index';
+import { getCollection } from 'astro:content';
 import Reveal from '~/components/ui/Reveal.astro';
 import Icon from '~/components/icons/Icon.astro';
-import { getCollection } from 'astro:content';
-const reasons = await getCollection('reasons');
+
+interface Props { lang?: Lang }
+const { lang = 'en' } = Astro.props;
+const t = await useTranslations(lang);
+
+type ReasonData = { id: string; icon: string; title: string; desc: string };
+let reasons: { data: ReasonData }[];
+if (lang === 'en') {
+  const enCol = await getCollection('reasons');
+  reasons = enCol.map((r) => ({ data: r.data as ReasonData }));
+} else {
+  const mod = await import(`~/i18n/content/${lang}/reasons.json`);
+  reasons = (mod.default as ReasonData[]).map((data) => ({ data }));
+}
 ---
 <section>
   <div class="container">
     <Reveal>
       <div class="section-head">
         <div>
-          <span class="eyebrow">Why Choose Us</span>
+          <span class="eyebrow">{t('why.eyebrow')}</span>
           <h2 class="h-section" style="margin-top:18px;">
-            The power to transform <span style="color:var(--gold);font-style:italic;font-weight:500;">your digital strategy</span>.
+            {t('why.heading_pre')} <span style="color:var(--gold);font-style:italic;font-weight:500;">{t('why.accent')}</span>{t('why.heading_end')}
           </h2>
         </div>
-        <p class="right">Four reasons brands stay with Media Pro for years — not months.</p>
+        <p class="right">{t('why.sub')}</p>
       </div>
     </Reveal>
 

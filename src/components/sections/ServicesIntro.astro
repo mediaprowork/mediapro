@@ -2,6 +2,11 @@
 import Reveal from '~/components/ui/Reveal.astro';
 import Icon from '~/components/icons/Icon.astro';
 import { waUrl } from '~/data/site';
+import type { Lang } from '~/i18n/index';
+import { useTranslations } from '~/i18n/index';
+interface Props { lang?: Lang }
+const { lang = 'en' } = Astro.props;
+const t = await useTranslations(lang);
 const waConsultUrl = waUrl(`Hi Media Pro, I'd like a free consultation about your services.`);
 ---
 <section>
@@ -27,13 +32,13 @@ const waConsultUrl = waUrl(`Hi Media Pro, I'd like a free consultation about you
       </Reveal>
 
       <div>
-        <Reveal><span class="eyebrow">Our Services</span></Reveal>
+        <Reveal><span class="eyebrow">{t('services_intro.eyebrow')}</span></Reveal>
         <Reveal delay={1}>
-          <h2 class="h-section" style="margin-top:22px;">Innovative strategies, measurable success.</h2>
+          <h2 class="h-section" style="margin-top:22px;">{t('services_intro.heading')}</h2>
         </Reveal>
         <Reveal delay={2}>
           <p class="lede" style="margin-top:22px;">
-            Media Pro's marketing strategies don't follow the playbook — they rewrite it. So your competitors can't predict your next move.
+            {t('services_intro.lede')}
           </p>
         </Reveal>
 
@@ -41,15 +46,15 @@ const waConsultUrl = waUrl(`Hi Media Pro, I'd like a free consultation about you
           <div class="highlight-box">
             <span class="icon-wrap"><Icon name="people" /></span>
             <div>
-              <h4>98% client satisfaction with proven results</h4>
-              <p>We work from experience to consistently deliver outcomes that move the needle.</p>
+              <h4>{t('services_intro.highlight_h')}</h4>
+              <p>{t('services_intro.highlight_p')}</p>
             </div>
           </div>
         </Reveal>
 
         <Reveal delay={4}>
           <a href={waConsultUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            Free Consultation
+            {t('services_intro.cta')}
             <Icon name="arrow-right" size={14} />
           </a>
         </Reveal>

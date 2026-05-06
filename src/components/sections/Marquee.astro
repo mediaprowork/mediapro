@@ -1,11 +1,16 @@
 ---
 import { getCollection } from 'astro:content';
+import type { Lang } from '~/i18n/index';
+import { useTranslations } from '~/i18n/index';
+interface Props { lang?: Lang }
+const { lang = 'en' } = Astro.props;
+const t = await useTranslations(lang);
 const logos = await getCollection('trustedLogos');
 const tripled = [...logos, ...logos, ...logos];
 ---
 <section class="trusted" aria-label="Trusted brands and organizations">
   <div class="container">
-    <p class="trusted-label">Trusted by 25,000+ brands across 40+ countries</p>
+    <p class="trusted-label">{t('marquee.label')}</p>
   </div>
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">

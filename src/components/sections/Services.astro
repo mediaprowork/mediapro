@@ -1,21 +1,40 @@
 ---
+import type { Lang } from '~/i18n/index';
+import { useTranslations } from '~/i18n/index';
+import { getCollection } from 'astro:content';
 import Reveal from '~/components/ui/Reveal.astro';
 import Icon from '~/components/icons/Icon.astro';
-import { getCollection } from 'astro:content';
-const services = (await getCollection('services')).sort((a, b) => a.data.num.localeCompare(b.data.num));
+
+interface Props { lang?: Lang }
+const { lang = 'en' } = Astro.props;
+const t = await useTranslations(lang);
+
+type ServiceData = { id: string; num: string; icon: string; title: string; desc: string };
+let services: { data: ServiceData }[];
+if (lang === 'en') {
+  const enCol = await getCollection('services');
+  services = enCol
+    .map((s) => ({ data: s.data as ServiceData }))
+    .sort((a, b) => a.data.num.localeCompare(b.data.num));
+} else {
+  const mod = await import(`~/i18n/content/${lang}/services.json`);
+  services = (mod.default as ServiceData[])
+    .sort((a, b) => a.num.localeCompare(b.num))
+    .map((data) => ({ data }));
+}
 ---
 <section id="services" aria-labelledby="services-heading">
   <div class="container">
     <Reveal>
       <div class="section-head">
         <div>
-          <span class="eyebrow">What we offer</span>
+          <span class="eyebrow">{t('services.eyebrow')}</span>
           <h2 id="services-heading" class="h-section" style="margin-top:18px;">
-            Strategic thinkers, creative doers, your marketing leaders.
+            {t('services.heading')}
           </h2>
         </div>
         <p class="right">
-          Six disciplines, one team. Media Pro picks the right mix for each brand — no templates, no guesswork.
+          {t('services.sub')}
         </p>
       </div>
     </Reveal>

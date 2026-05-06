@@ -1,6 +1,21 @@
 ---
+import type { Lang } from '~/i18n/index';
+import { useTranslations } from '~/i18n/index';
 import { getCollection } from 'astro:content';
-const stats = await getCollection('stats');
+
+interface Props { lang?: Lang }
+const { lang = 'en' } = Astro.props;
+const t = await useTranslations(lang);
+
+type StatData = { id: string; num: string; label: string; source?: string };
+let stats: { data: StatData }[];
+if (lang === 'en') {
+  const enCol = await getCollection('stats');
+  stats = enCol.map((s) => ({ data: s.data as StatData }));
+} else {
+  const mod = await import(`~/i18n/content/${lang}/stats.json`);
+  stats = (mod.default as StatData[]).map((data) => ({ data }));
+}
 ---
 <section class="stats" itemscope itemtype="https://schema.org/Dataset">
   <meta itemprop="name" content="Media Pro Performance Metrics 2026" />
@@ -25,7 +40,7 @@ const stats = await getCollection('stats');
       })}
     </div>
     <small class="stats-source" style="display:block;margin-top:24px;text-align:center;color:var(--ink-mute);font-size:12px;">
-      Source: Media Pro internal data, last updated <time datetime="2026-04-30">April 2026</time>
+      {t('stats.source')}
     </small>
   </div>
 </section>

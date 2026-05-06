@@ -1,24 +1,29 @@
 ---
 import Reveal from '~/components/ui/Reveal.astro';
 import { waUrl } from '~/data/site';
+import type { Lang } from '~/i18n/index';
+import { useTranslations } from '~/i18n/index';
+interface Props { lang?: Lang }
+const { lang = 'en' } = Astro.props;
+const t = await useTranslations(lang);
 const waCtaUrl = waUrl(`Hi Media Pro, I'd like to know more about how you can help my brand stand out.`);
 ---
 <section class="cta" id="contact">
   <div class="cta-bg-grid"></div>
   <div class="container">
-    <Reveal><span class="eyebrow">Let's build something</span></Reveal>
+    <Reveal><span class="eyebrow">{t('cta.eyebrow')}</span></Reveal>
     <Reveal delay={1}>
       <h2 class="h-display" style="font-size:clamp(36px,5.4vw,76px);">
-        Making your brand <span class="accent">stand out</span> online.
+        {t('cta.heading_pre')} <span class="accent">{t('cta.accent')}</span> {t('cta.heading_end')}
       </h2>
     </Reveal>
     <Reveal delay={2}>
-      <p>Your business will become more widely known, recognised, and remembered — to everyone.</p>
+      <p>{t('cta.lede')}</p>
     </Reveal>
     <Reveal delay={3}>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="mailto:admin@mediapro.work" class="btn btn-primary">Ask More</a>
-        <a href={waCtaUrl} target="_blank" rel="noopener noreferrer" class="btn btn-ghost">WhatsApp us</a>
+        <a href="mailto:admin@mediapro.work" class="btn btn-primary">{t('cta.btn_primary')}</a>
+        <a href={waCtaUrl} target="_blank" rel="noopener noreferrer" class="btn btn-ghost">{t('cta.btn_secondary')}</a>
       </div>
     </Reveal>
   </div>

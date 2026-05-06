@@ -2,6 +2,11 @@
 import Reveal from '~/components/ui/Reveal.astro';
 import Icon from '~/components/icons/Icon.astro';
 import { getCollection } from 'astro:content';
+import type { Lang } from '~/i18n/index';
+import { useTranslations } from '~/i18n/index';
+interface Props { lang?: Lang }
+const { lang = 'en' } = Astro.props;
+const t = await useTranslations(lang);
 const testimonials = await getCollection('testimonials');
 ---
 <section>
@@ -9,8 +14,8 @@ const testimonials = await getCollection('testimonials');
     <Reveal>
       <div class="section-head">
         <div>
-          <span class="eyebrow">Client Feedback &amp; Reviews</span>
-          <h2 class="h-section" style="margin-top:18px;">Marketing solutions tailored for your success.</h2>
+          <span class="eyebrow">{t('testimonials.eyebrow')}</span>
+          <h2 class="h-section" style="margin-top:18px;">{t('testimonials.heading')}</h2>
         </div>
       </div>
     </Reveal>
@@ -20,9 +25,9 @@ const testimonials = await getCollection('testimonials');
         <div class="growth-card">
           <span class="icon-wrap"><Icon name="arrow-up" size={26} /></span>
           <div>
-            <span class="num">68%</span>
-            <h5>Business Growth</h5>
-            <p>Many of our clients grow much faster than they planned.</p>
+            <span class="num">{t('testimonials.growth_1_num')}</span>
+            <h5>{t('testimonials.growth_1_h')}</h5>
+            <p>{t('testimonials.growth_1_p')}</p>
           </div>
         </div>
       </Reveal>
@@ -30,24 +35,24 @@ const testimonials = await getCollection('testimonials');
         <div class="growth-card">
           <span class="icon-wrap"><Icon name="arrow-up" size={26} /></span>
           <div>
-            <span class="num">42%</span>
-            <h5>Conversion Lift</h5>
-            <p>Even small brands see substantial conversion gains.</p>
+            <span class="num">{t('testimonials.growth_2_num')}</span>
+            <h5>{t('testimonials.growth_2_h')}</h5>
+            <p>{t('testimonials.growth_2_p')}</p>
           </div>
         </div>
       </Reveal>
     </div>
 
     <div class="testimonials-track">
-      {testimonials.map((t, i) => (
+      {testimonials.map((tl, i) => (
         <Reveal delay={((i % 3) + 1) as 1 | 2 | 3}>
           <div class="testimonial">
-            <p>{t.data.quote}</p>
+            <p>{tl.data.quote}</p>
             <div class="testimonial-author">
-              <img src={t.data.img} alt={t.data.name} width="44" height="44" loading="lazy" />
+              <img src={tl.data.img} alt={tl.data.name} width="44" height="44" loading="lazy" />
               <div>
-                <strong>{t.data.name}</strong>
-                <span>{t.data.role}</span>
+                <strong>{tl.data.name}</strong>
+                <span>{tl.data.role}</span>
               </div>
             </div>
           </div>

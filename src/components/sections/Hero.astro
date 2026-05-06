@@ -2,28 +2,32 @@
 import Reveal from '~/components/ui/Reveal.astro';
 import Icon from '~/components/icons/Icon.astro';
 import { SITE, waUrl } from '~/data/site';
+import type { Lang } from '~/i18n/index';
+import { useTranslations } from '~/i18n/index';
+interface Props { lang?: Lang }
+const { lang = 'en' } = Astro.props;
+const t = await useTranslations(lang);
 const waHeroUrl = waUrl(`Hi Media Pro, I'd like to schedule a free consultation.`);
 ---
 <section class="hero" id="top" aria-labelledby="hero-heading">
   <div class="container">
     <div class="hero-grid">
       <div class="hero-copy">
-        <Reveal><span class="eyebrow">We are Media Pro Creative</span></Reveal>
+        <Reveal><span class="eyebrow">{t('hero.eyebrow')}</span></Reveal>
         <Reveal delay={1}>
           <h1 id="hero-heading" class="h-display">
-            Crafting brands that <span class="accent">stand out</span> in a noisy digital world.
+            {t('hero.heading')} <span class="accent">{t('hero.accent')}</span> {t('hero.heading_end')}
           </h1>
         </Reveal>
         <Reveal delay={2}>
           <p class="lede">
-            <strong>Media Pro is a global digital marketing agency founded in {SITE.founded}.</strong>
-            {' '}We help brands worldwide grow through Web Development, Google Ads, Meta Ads, SEO, and Consulting —
-            trusted by {SITE.stats.brandsServed} brands across {SITE.stats.countries} countries with a {SITE.stats.rating} client rating.
+            <strong>{t('hero.lede_strong')}</strong>
+            {' '}{t('hero.lede_rest').replace('{brands}', SITE.stats.brandsServed).replace('{countries}', SITE.stats.countries).replace('{rating}', SITE.stats.rating)}
           </p>
         </Reveal>
         <Reveal delay={3} class="hero-actions">
           <a href="#about" class="btn btn-primary">
-            Discover more
+            {t('hero.btn_primary')}
             <Icon name="arrow-right" size={14} />
           </a>
           <a
@@ -32,22 +36,22 @@ const waHeroUrl = waUrl(`Hi Media Pro, I'd like to schedule a free consultation.
             rel="noopener noreferrer"
             class="btn btn-ghost"
           >
-            Free Consultation
+            {t('hero.btn_secondary')}
           </a>
         </Reveal>
 
         <Reveal delay={4} class="hero-meta">
           <div class="m">
             <strong>{SITE.stats.yearsExperience} yrs</strong>
-            <span>Industry experience</span>
+            <span>{t('hero.meta_yrs')}</span>
           </div>
           <div class="m">
             <strong>{SITE.stats.brandsServed}</strong>
-            <span>Global brands trust us</span>
+            <span>{t('hero.meta_brands')}</span>
           </div>
           <div class="m">
             <strong>{SITE.stats.rating}★</strong>
-            <span>Client rating</span>
+            <span>{t('hero.meta_rating')}</span>
           </div>
         </Reveal>
       </div>
@@ -59,15 +63,15 @@ const waHeroUrl = waUrl(`Hi Media Pro, I'd like to schedule a free consultation.
 
         <div class="chip chip-1">
           <Icon name="arrow-up" size={14} />
-          <span>Engagement <span class="red">+180%</span></span>
+          <span>{t('hero.chip_engagement')} <span class="red">+180%</span></span>
         </div>
         <div class="chip chip-2">
           <Icon name="stars" size={14} />
-          <span>Conversion <span class="gold">+45%</span></span>
+          <span>{t('hero.chip_conversion')} <span class="gold">+45%</span></span>
         </div>
         <div class="chip chip-3">
           <Icon name="people" size={14} />
-          <span>Reach <span class="red">2.4M</span></span>
+          <span>{t('hero.chip_reach')} <span class="red">2.4M</span></span>
         </div>
 
         <img
