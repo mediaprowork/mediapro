@@ -28,8 +28,12 @@ const ogImageURL = new URL(ogImage, SITE.url).toString();
 <meta name="category" content={SITE.category} />
 {keywords && <meta name="keywords" content={keywords} />}
 <link rel="canonical" href={canonicalURL} />
-<link rel="alternate" hreflang="en" href={canonicalURL} />
-<link rel="alternate" hreflang="x-default" href={canonicalURL} />
+{/* hreflang tags — point each locale to the equivalent page */}
+<link rel="alternate" hreflang="en"      href={new URL((canonical || Astro.url.pathname).replace(/^\/(id|ar|zh)/, '') || '/', SITE.url).toString()} />
+<link rel="alternate" hreflang="id"      href={new URL('/id' + ((canonical || Astro.url.pathname).replace(/^\/(id|ar|zh)/, '') || '/').replace(/\/$/, ''), SITE.url).toString()} />
+<link rel="alternate" hreflang="ar"      href={new URL('/ar' + ((canonical || Astro.url.pathname).replace(/^\/(id|ar|zh)/, '') || '/').replace(/\/$/, ''), SITE.url).toString()} />
+<link rel="alternate" hreflang="zh-Hans" href={new URL('/zh' + ((canonical || Astro.url.pathname).replace(/^\/(id|ar|zh)/, '') || '/').replace(/\/$/, ''), SITE.url).toString()} />
+<link rel="alternate" hreflang="x-default" href={new URL((canonical || Astro.url.pathname).replace(/^\/(id|ar|zh)/, '') || '/', SITE.url).toString()} />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content={ogType} />
 <meta property="og:title" content={title} />
