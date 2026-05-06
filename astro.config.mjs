@@ -8,6 +8,12 @@ export default defineConfig({
   site: 'https://mediapro.work',
   output: 'static',
   trailingSlash: 'never',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'id', 'ar', 'zh'],
+    routing: { prefixDefaultLocale: false },
+    fallback: { id: 'en', ar: 'en', zh: 'en' },
+  },
 
   build: {
     inlineStylesheets: 'auto',
@@ -59,6 +65,24 @@ export default defineConfig({
       cssVariable: '--font-body',
       weights: [300, 400, 500, 600, 700],
       subsets: ['latin'],
+      styles: ['normal'],
+      display: 'swap',
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'Noto Sans Arabic',
+      cssVariable: '--font-arabic',
+      weights: [400, 500, 600, 700],
+      subsets: ['arabic'],
+      styles: ['normal'],
+      display: 'swap',
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'Noto Sans SC',
+      cssVariable: '--font-cjk',
+      weights: [400, 500, 700],
+      subsets: ['chinese-simplified'],
       styles: ['normal'],
       display: 'swap',
     },
