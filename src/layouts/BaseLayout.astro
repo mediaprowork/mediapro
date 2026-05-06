@@ -5,6 +5,7 @@ import JsonLd from '~/components/seo/JsonLd.astro';
 import Analytics from '~/components/seo/Analytics.astro';
 import Header from '~/components/layout/Header.astro';
 import Footer from '~/components/layout/Footer.astro';
+import ThemeToggle from '~/components/ui/ThemeToggle.astro';
 import { organizationSchema } from '~/data/schemas/organization';
 import { websiteSchema } from '~/data/schemas/website';
 import { SITE } from '~/data/site';
@@ -21,6 +22,17 @@ const { title, description, canonical, ogImage, ogType, noindex, active, schemas
 <!doctype html>
 <html lang="en">
   <head>
+    <script is:inline>
+      (function(){
+        try {
+          var s = localStorage.getItem('theme');
+          var p = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', s || p);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://www.facebook.com https://connect.facebook.net; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;" />
@@ -43,6 +55,7 @@ const { title, description, canonical, ogImage, ogType, noindex, active, schemas
     <Header active={active} />
     <main id="main"><slot /></main>
     <Footer />
+    <ThemeToggle />
     <script>import '~/lib/reveal';</script>
     <script>import '~/lib/nav-active';</script>
   </body>
