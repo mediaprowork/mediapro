@@ -2,27 +2,34 @@
 import Icon from '~/components/icons/Icon.astro';
 import { SITE } from '~/data/site';
 import type { Lang } from '~/i18n/index';
+import { useTranslations } from '~/i18n/index';
+import LangSwitcher from '~/components/ui/LangSwitcher.astro';
 interface Props { active?: 'home'|'about'|'services'|'contact'; homeBase?: string; lang?: Lang; }
 const { active, homeBase = '/', lang = 'en' } = Astro.props;
+const t = await useTranslations(lang);
+const contactHref = lang === 'en' ? '/contact' : `/${lang}/contact`;
+const localizedHomeBase = homeBase === '/' && lang !== 'en' ? `/${lang}` : homeBase;
 ---
 
 <header class="site-header" role="banner">
   <div class="nav-inner">
-    <a href={homeBase} class="brand" aria-label={`${SITE.name} — Home`}>
+    <a href={localizedHomeBase} class="brand" aria-label={`${SITE.name} — Home`}>
       <img src="/logo-text.png" alt="Media Pro" width="130" height="43" />
     </a>
 
     <nav aria-label="Primary navigation">
       <ul class="nav-links">
-        <li><a href={homeBase} aria-current={active === 'home' ? 'page' : undefined}>Home</a></li>
-        <li><a href={`${homeBase}#about`} aria-current={active === 'about' ? 'page' : undefined}>About</a></li>
-        <li><a href={`${homeBase}#services`} aria-current={active === 'services' ? 'page' : undefined}>Services</a></li>
-        <li><a href="/contact" aria-current={active === 'contact' ? 'page' : undefined}>Contact</a></li>
+        <li><a href={localizedHomeBase} aria-current={active === 'home' ? 'page' : undefined}>{t('nav.home')}</a></li>
+        <li><a href={`${localizedHomeBase}#about`} aria-current={active === 'about' ? 'page' : undefined}>{t('nav.about')}</a></li>
+        <li><a href={`${localizedHomeBase}#services`} aria-current={active === 'services' ? 'page' : undefined}>{t('nav.services')}</a></li>
+        <li><a href={contactHref} aria-current={active === 'contact' ? 'page' : undefined}>{t('nav.contact')}</a></li>
       </ul>
     </nav>
 
-    <a href="/contact" class="btn btn-primary nav-cta">
-      Get Started
+    <LangSwitcher currentLang={lang} />
+
+    <a href={contactHref} class="btn btn-primary nav-cta">
+      {t('nav.cta')}
       <Icon name="arrow-right" size={14} />
     </a>
 
@@ -30,7 +37,7 @@ const { active, homeBase = '/', lang = 'en' } = Astro.props;
     <button
       class="menu-btn"
       id="menuBtn"
-      aria-label="Open menu"
+      aria-label={t('nav.menu_open')}
       aria-expanded="false"
       aria-controls="navSidebar"
       type="button"
@@ -46,22 +53,23 @@ const { active, homeBase = '/', lang = 'en' } = Astro.props;
 
 <!-- Sidebar drawer -->
 <aside class="nav-sidebar" id="navSidebar" aria-label="Mobile navigation" aria-hidden="true">
-  <button class="sidebar-close" id="sidebarClose" aria-label="Close menu" type="button">
+  <button class="sidebar-close" id="sidebarClose" aria-label={t('nav.menu_close')} type="button">
     <span class="sc-line"></span>
     <span class="sc-line"></span>
   </button>
   <nav>
     <ul class="sidebar-links">
-      <li><a href={homeBase} aria-current={active === 'home' ? 'page' : undefined}>Home</a></li>
-      <li><a href={`${homeBase}#about`} aria-current={active === 'about' ? 'page' : undefined}>About</a></li>
-      <li><a href={`${homeBase}#services`} aria-current={active === 'services' ? 'page' : undefined}>Services</a></li>
-      <li><a href="/contact" aria-current={active === 'contact' ? 'page' : undefined}>Contact</a></li>
+      <li><a href={localizedHomeBase} aria-current={active === 'home' ? 'page' : undefined}>{t('nav.home')}</a></li>
+      <li><a href={`${localizedHomeBase}#about`} aria-current={active === 'about' ? 'page' : undefined}>{t('nav.about')}</a></li>
+      <li><a href={`${localizedHomeBase}#services`} aria-current={active === 'services' ? 'page' : undefined}>{t('nav.services')}</a></li>
+      <li><a href={contactHref} aria-current={active === 'contact' ? 'page' : undefined}>{t('nav.contact')}</a></li>
     </ul>
   </nav>
 
   <div class="sidebar-footer">
-    <a href="/contact" class="btn btn-primary sidebar-cta-btn">
-      Get Started
+    <LangSwitcher currentLang={lang} />
+    <a href={contactHref} class="btn btn-primary sidebar-cta-btn">
+      {t('nav.cta')}
       <Icon name="arrow-right" size={14} />
     </a>
   </div>

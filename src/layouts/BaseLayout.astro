@@ -63,7 +63,7 @@ const { title, description, canonical, ogImage, ogType, noindex, active, schemas
     <a href="#main" class="skip-link">Skip to main content</a>
     <Header active={active} lang={lang} />
     <main id="main"><slot /></main>
-    <Footer />
+    <Footer lang={lang} />
     <ThemeToggle />
     <script>import '~/lib/reveal';</script>
     <script>import '~/lib/nav-active';</script>
