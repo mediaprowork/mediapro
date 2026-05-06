@@ -1,0 +1,63 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/sections/Hero.astro';
+import Marquee from '~/components/sections/Marquee.astro';
+import About from '~/components/sections/About.astro';
+import ServicesIntro from '~/components/sections/ServicesIntro.astro';
+import Services from '~/components/sections/Services.astro';
+import Cta from '~/components/sections/Cta.astro';
+import Stats from '~/components/sections/Stats.astro';
+import Why from '~/components/sections/Why.astro';
+import Testimonials from '~/components/sections/Testimonials.astro';
+import FooterCta from '~/components/sections/FooterCta.astro';
+import { professionalServiceSchema } from '~/data/schemas/professional-service';
+import { serviceCatalogSchema } from '~/data/schemas/service-catalog';
+import { faqPageSchema } from '~/data/schemas/faq-page';
+import { productReviewSchema } from '~/data/schemas/product-review';
+import { breadcrumbSchema } from '~/data/schemas/breadcrumb';
+import { webPageSchema } from '~/data/schemas/webpage';
+import { serviceOfferSchemas } from '~/data/schemas/services-offer';
+import { SITE } from '~/data/site';
+import { useTranslations } from '~/i18n/index';
+import { getCollection } from 'astro:content';
+
+const lang = 'id' as const;
+const t = await useTranslations(lang);
+const testimonials = await getCollection('testimonials');
+
+const homepageFaqs = [
+  { question: 'Layanan digital marketing apa yang ditawarkan Media Pro?', answer: 'Media Pro menawarkan Pengembangan Web, Google Ads, Meta Ads, SEO, Social Media Marketing, Content Marketing, Email Marketing, Influencer Marketing, Analytics & Reporting, dan Layanan Konsultasi.' },
+  { question: 'Seberapa berpengalaman Media Pro?', answer: 'Media Pro memiliki lebih dari 10 tahun keahlian digital marketing, telah menyelesaikan 91.000+ proyek untuk 84.000+ klien yang puas dengan rating klien 4.7.' },
+  { question: 'Bagaimana cara menghubungi Media Pro untuk konsultasi?', answer: 'Anda dapat mengirim email ke admin@mediapro.work atau menghubungi kami via WhatsApp untuk konsultasi gratis. Kami bekerja dengan klien secara global dan merespons dalam 4 jam kerja.' },
+  { question: 'Apakah Media Pro bekerja dengan UKM?', answer: 'Ya. Solusi kami fleksibel dan terukur untuk bisnis dari semua ukuran — dari brand pemula hingga klien enterprise.' },
+];
+
+const schemas = [
+  webPageSchema({ url: `${SITE.url}/id`, title: t('meta.homepage_title'), description: t('meta.homepage_desc'), speakable: true }),
+  professionalServiceSchema,
+  serviceCatalogSchema,
+  faqPageSchema(homepageFaqs),
+  productReviewSchema(testimonials.map((tt) => ({ quote: tt.data.quote, name: tt.data.name, role: tt.data.role }))),
+  breadcrumbSchema([{ label: t('nav.home'), href: '/id' }]),
+  ...serviceOfferSchemas,
+];
+---
+<BaseLayout
+  title={t('meta.homepage_title')}
+  description={t('meta.homepage_desc')}
+  active="home"
+  schemas={schemas}
+  preloadHero={true}
+  lang={lang}
+>
+  <Hero lang={lang} />
+  <Marquee lang={lang} />
+  <About lang={lang} />
+  <ServicesIntro lang={lang} />
+  <Services lang={lang} />
+  <Cta lang={lang} />
+  <Stats lang={lang} />
+  <Why lang={lang} />
+  <Testimonials lang={lang} />
+  <FooterCta lang={lang} />
+</BaseLayout>
