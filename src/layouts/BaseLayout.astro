@@ -41,7 +41,12 @@ const { title, description, canonical, ogImage, ogType, noindex, active, schemas
     <BaseSEO {title} {description} {canonical} {ogImage} {ogType} {noindex} {keywords} />
     <Font cssVariable="--font-display" preload />
     <Font cssVariable="--font-body" preload />
-    {preloadHero && <link rel="preload" as="image" href="/images/hero-phone.png" fetchpriority="high" />}
+    {preloadHero && (
+      <>
+        <link rel="preload" as="image" href="/images/hero-phone.png" fetchpriority="high" media="(prefers-color-scheme: light)" />
+        <link rel="preload" as="image" href="/images/hero-phone-dark.png" fetchpriority="high" media="(prefers-color-scheme: dark)" />
+      </>
+    )}
     <link rel="icon" type="image/png" href="/logo-color.png" />
     <link rel="apple-touch-icon" href="/logo-color.png" />
     <meta name="google-site-verification" content={SITE.analytics.gscVerification} />
