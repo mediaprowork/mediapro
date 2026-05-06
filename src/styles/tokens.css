@@ -52,3 +52,52 @@
   --radius: 16px;
   --radius-sm: 10px;
 }
+
+/* ====== Dark theme overrides ======
+   Activated by [data-theme="dark"] on <html>.
+   Token names match light mode — only values flip. */
+[data-theme="dark"] {
+  /* Surfaces */
+  --bg: #111111;
+  --bg-soft: #1A1A1A;
+  --bg-warm: #161209;
+  --line: #2A2A2A;
+  --line-strong: #3D3D3D;
+
+  /* Ink */
+  --ink: #F0F0F0;
+  --ink-soft: #AAAAAA;
+  --ink-mute: #666666;
+
+  /* Brand red — slightly lighter for dark bg contrast */
+  --red: #E03840;
+  --red-dark: #C3282F;
+  --red-soft: #2A0D0E;
+
+  /* Brand gold — slightly lighter */
+  --gold: #F0BC20;
+  --gold-dark: #D2A418;
+  --gold-soft: #1A1200;
+
+  /* CTA yellow — keep, works on dark */
+  --yellow: #FFB804;
+  --yellow-dark: #FFB804;
+  --yellow-soft: #1C1500;
+
+  /* Shadows — stronger in dark */
+  --sh-1: 0 1px 2px rgba(0,0,0,.3), 0 1px 3px rgba(0,0,0,.3);
+  --sh-2: 0 4px 12px rgba(0,0,0,.4), 0 2px 4px rgba(0,0,0,.3);
+  --sh-3: 0 14px 40px rgba(0,0,0,.55), 0 4px 12px rgba(0,0,0,.4);
+}
+
+/* Smooth color transitions when toggling — but skip pseudo-elements
+   that have their own custom transitions (e.g., reveal animations) */
+html {
+  color-scheme: light dark;
+}
+[data-theme="dark"] { color-scheme: dark; }
+[data-theme="light"] { color-scheme: light; }
+
+body {
+  transition: background-color .25s ease, color .25s ease;
+}
