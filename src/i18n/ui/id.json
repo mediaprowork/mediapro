@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "homepage_title": "Media Pro — Agensi Digital Marketing Global | SEO, Iklan & Web",
+    "homepage_desc": "Agensi digital marketing global premium. Pengembangan Web, Google Ads, Meta Ads, SEO & Konsultasi. Dipercaya 25.000+ brand di 40+ negara.",
+    "contact_title": "Hubungi Media Pro — Konsultasi Digital Marketing Gratis",
+    "contact_desc": "Hubungi Media Pro untuk konsultasi gratis. Kami merespons dalam 4 jam kerja.",
+    "faq_title": "FAQ — Layanan Digital Marketing | Media Pro",
+    "faq_desc": "17 jawaban atas pertanyaan umum tentang layanan Media Pro — harga, timeline, proses.",
+    "terms_title": "Ketentuan Layanan & Kebijakan Privasi — Media Pro",
+    "terms_desc": "Ketentuan Layanan dan Kebijakan Privasi gabungan untuk Media Pro Creative Limited.",
+    "disclaimer_title": "Disclaimer — Media Pro Digital Marketing",
+    "disclaimer_desc": "Informasi penting tentang jaminan dan batasan layanan.",
+    "404_title": "Halaman Tidak Ditemukan — Media Pro",
+    "404_desc": "Halaman yang Anda cari tidak ada."
+  },
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "services": "Layanan",
+    "contact": "Kontak",
+    "cta": "Mulai Sekarang",
+    "skip": "Lewati ke konten utama",
+    "menu_open": "Buka menu",
+    "menu_close": "Tutup menu"
+  },
+  "hero": {
+    "eyebrow": "Kami adalah Media Pro Creative",
+    "heading": "Membangun brand yang",
+    "accent": "menonjol",
+    "heading_end": "di dunia digital yang ramai.",
+    "lede_strong": "Media Pro adalah agensi digital marketing global yang berdiri sejak 2014.",
+    "lede_rest": "Kami membantu brand di seluruh dunia berkembang melalui Pengembangan Web, Google Ads, Meta Ads, SEO, dan Konsultasi — dipercaya oleh {brands} brand di {countries} negara dengan rating klien {rating}.",
+    "btn_primary": "Pelajari lebih lanjut",
+    "btn_secondary": "Konsultasi Gratis",
+    "meta_yrs": "Pengalaman industri",
+    "meta_brands": "Brand global mempercayai kami",
+    "meta_rating": "Rating klien",
+    "chip_engagement": "Engagement",
+    "chip_conversion": "Konversi",
+    "chip_reach": "Jangkauan"
+  },
+  "marquee": { "label": "Dipercaya oleh 25.000+ brand di 40+ negara" },
+  "about": {
+    "eyebrow": "Tentang Media Pro",
+    "heading": "Lebih dari satu dekade keahlian",
+    "accent": "digital marketing",
+    "heading_end": ".",
+    "lede": "Media Pro menawarkan rangkaian lengkap layanan digital marketing — SEO, PPC, media sosial, dan pembuatan konten — yang ditujukan untuk meningkatkan visibilitas brand dan menghasilkan konversi signifikan.",
+    "bullet_1": "Strategi Media Sosial",
+    "bullet_2": "Digital Marketing",
+    "cta": "Hubungi kami",
+    "vision_h": "Visi Kami",
+    "vision_p": "Menciptakan ekosistem digital marketing yang sehat yang mengangkat setiap brand yang kami sentuh.",
+    "mission_h": "Misi Kami",
+    "mission_p": "Tetap di jalur yang benar dalam digital marketing — strategis, etis, dan dibangun untuk bertahan lama.",
+    "motto_h": "Motto Kami",
+    "motto_p": "Membuat bisnis Anda 10× lebih terlihat dan bernilai dari kompetitor."
+  },
+  "services_intro": {
+    "eyebrow": "Layanan Kami",
+    "heading": "Strategi inovatif, kesuksesan terukur.",
+    "lede": "Strategi marketing Media Pro tidak mengikuti pola lama — kami menulis ulang. Sehingga kompetitor Anda tidak bisa memprediksi langkah berikutnya.",
+    "highlight_h": "98% kepuasan klien dengan hasil terbukti",
+    "highlight_p": "Kami bekerja berdasarkan pengalaman untuk konsisten memberikan hasil yang nyata.",
+    "cta": "Konsultasi Gratis"
+  },
+  "services": {
+    "eyebrow": "Yang kami tawarkan",
+    "heading": "Pemikir strategis, pelaku kreatif, pemimpin marketing Anda.",
+    "sub": "Enam disiplin, satu tim. Media Pro memilih kombinasi yang tepat untuk setiap brand — tanpa template, tanpa tebak-tebakan."
+  },
+  "cta": {
+    "eyebrow": "Mari bangun sesuatu",
+    "heading_pre": "Membuat brand Anda",
+    "accent": "menonjol",
+    "heading_end": "online.",
+    "lede": "Bisnis Anda akan lebih dikenal, diakui, dan diingat — oleh semua orang.",
+    "btn_primary": "Tanya Lebih Banyak",
+    "btn_secondary": "WhatsApp kami"
+  },
+  "stats": { "source": "Sumber: Data internal Media Pro, terakhir diperbarui April 2026" },
+  "why": {
+    "eyebrow": "Mengapa Memilih Kami",
+    "heading_pre": "Kekuatan untuk mentransformasi",
+    "accent": "strategi digital Anda",
+    "heading_end": ".",
+    "sub": "Empat alasan brand bertahan dengan Media Pro selama bertahun-tahun — bukan bulanan."
+  },
+  "testimonials": {
+    "eyebrow": "Feedback & Ulasan Klien",
+    "heading": "Solusi marketing yang disesuaikan untuk kesuksesan Anda.",
+    "growth_1_num": "68%",
+    "growth_1_h": "Pertumbuhan Bisnis",
+    "growth_1_p": "Banyak klien kami berkembang jauh lebih cepat dari yang direncanakan.",
+    "growth_2_num": "42%",
+    "growth_2_h": "Peningkatan Konversi",
+    "growth_2_p": "Bahkan brand kecil melihat peningkatan konversi yang substansial."
+  },
+  "footer_cta": {
+    "eyebrow": "Hubungi kami",
+    "heading_pre": "Siap berkembang? Bawa kami",
+    "accent": "ide terbaik Anda",
+    "heading_end": ".",
+    "btn_primary": "Mulai Sekarang"
+  },
+  "footer": {
+    "tagline": "Studio digital marketing premium yang membangun brand pemimpin percakapan.",
+    "col_services": "Layanan",
+    "col_company": "Perusahaan",
+    "col_contact": "Kontak",
+    "link_terms": "Ketentuan",
+    "link_disclaimer": "Disclaimer",
+    "link_faq": "FAQ",
+    "link_contact": "Kontak",
+    "wa_label": "chat sekarang",
+    "copyright": "© 2026 Media Pro Creative Limited. Semua hak dilindungi."
+  },
+  "lang_switcher": {
+    "label": "Bahasa",
+    "en": "English",
+    "id": "Indonesia",
+    "ar": "العربية",
+    "zh": "中文"
+  },
+  "contact_page": {
+    "eyebrow": "Kontak",
+    "title": "Mari bangun sesuatu yang",
+    "title_accent": "luar biasa",
+    "title_end": ".",
+    "lede": "Setiap pesan dibaca oleh orang sungguhan. Tanpa chatbot, tanpa balasan otomatis.",
+    "card_email": "Email",
+    "card_whatsapp": "WhatsApp",
+    "card_studio": "Studio",
+    "card_studio_value": "Remote-first, global",
+    "form_title": "Ceritakan tentang proyek Anda",
+    "form_sub": "Kami merespons dalam 4 jam kerja. Mengirim akan menyiapkan pesan WhatsApp yang dapat Anda tinjau dan kirim.",
+    "label_name": "Nama",
+    "label_email": "Email",
+    "label_company": "Perusahaan",
+    "label_services": "Layanan apa yang Anda butuhkan?",
+    "label_budget": "Anggaran (USD)",
+    "label_timeline": "Timeline",
+    "label_message": "Ceritakan lebih banyak",
+    "label_consent_pre": "Saya setuju dengan",
+    "label_consent_link": "kebijakan privasi",
+    "label_consent_post": "dan setuju untuk dihubungi terkait pertanyaan saya.",
+    "btn_submit": "Kirim via WhatsApp",
+    "success": "Terima kasih — kami akan segera menghubungi Anda.",
+    "timeline_select": "Pilih timeline",
+    "timeline_asap": "Sesegera mungkin",
+    "timeline_1m": "Dalam 1 bulan",
+    "timeline_3m": "Dalam 3 bulan",
+    "timeline_exploring": "Hanya menjajaki"
+  },
+  "faq_page": {
+    "title": "Pertanyaan yang Sering",
+    "title_accent": "Diajukan",
+    "lede": "Semua yang ingin Anda ketahui sebelum bekerja sama dengan Media Pro. Tidak menemukan jawaban? Kirim pesan — kami biasanya membalas dalam 4 jam kerja.",
+    "cat_all": "Semua",
+    "cat_general": "Umum",
+    "cat_services": "Layanan",
+    "cat_pricing": "Harga",
+    "cat_process": "Proses",
+    "cat_results": "Hasil",
+    "still_questions": "Masih ada pertanyaan?",
+    "still_questions_sub": "Kami merespons dalam 4 jam kerja.",
+    "contact_us": "Hubungi kami"
+  },
+  "terms_page": {
+    "title": "Ketentuan",
+    "title_accent": "Layanan",
+    "lede": "Kebijakan Privasi dan Ketentuan Layanan gabungan. Dengan menggunakan mediapro.work atau memakai layanan kami, Anda menyetujui kebijakan di bawah ini.",
+    "last_updated": "Terakhir diperbarui:",
+    "toc_h": "Daftar Isi"
+  },
+  "disclaimer_page": {
+    "title": "Disclaimer",
+    "title_accent": "Penting",
+    "lede": "Mohon dibaca dengan seksama sebelum menggunakan layanan digital marketing kami.",
+    "last_updated": "Terakhir diperbarui:",
+    "toc_h": "Daftar Isi"
+  },
+  "p404": {
+    "eyebrow": "404",
+    "heading": "Tersesat di kebisingan digital?",
+    "lede": "Halaman yang Anda cari tidak ada. Mari kembali ke jalur.",
+    "btn": "Kembali ke beranda"
+  }
+}

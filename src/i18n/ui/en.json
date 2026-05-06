@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "homepage_title": "Media Pro — Global Digital Marketing Agency | SEO, Ads & Web Dev",
+    "homepage_desc": "Premium global digital marketing agency. Web Development, Google Ads, Meta Ads, SEO & Consulting. Trusted by 25,000+ brands across 40+ countries.",
+    "contact_title": "Contact Media Pro — Free Digital Marketing Consultation",
+    "contact_desc": "Get in touch with Media Pro for a free consultation. We respond within 4 working hours.",
+    "faq_title": "FAQ — Digital Marketing Services | Media Pro",
+    "faq_desc": "17 answers to common questions about Media Pro's services — pricing, timelines, process.",
+    "terms_title": "Terms of Service & Privacy Policy — Media Pro",
+    "terms_desc": "Combined Terms of Service and Privacy Policy for Media Pro Creative Limited.",
+    "disclaimer_title": "Disclaimer — Media Pro Digital Marketing",
+    "disclaimer_desc": "Important information about service guarantees and limitations.",
+    "404_title": "Page Not Found — Media Pro",
+    "404_desc": "The page you were looking for doesn't exist."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "cta": "Get Started",
+    "skip": "Skip to main content",
+    "menu_open": "Open menu",
+    "menu_close": "Close menu"
+  },
+  "hero": {
+    "eyebrow": "We are Media Pro Creative",
+    "heading": "Crafting brands that",
+    "accent": "stand out",
+    "heading_end": "in a noisy digital world.",
+    "lede_strong": "Media Pro is a global digital marketing agency founded in 2014.",
+    "lede_rest": "We help brands worldwide grow through Web Development, Google Ads, Meta Ads, SEO, and Consulting — trusted by {brands} brands across {countries} countries with a {rating} client rating.",
+    "btn_primary": "Discover more",
+    "btn_secondary": "Free Consultation",
+    "meta_yrs": "Industry experience",
+    "meta_brands": "Global brands trust us",
+    "meta_rating": "Client rating",
+    "chip_engagement": "Engagement",
+    "chip_conversion": "Conversion",
+    "chip_reach": "Reach"
+  },
+  "marquee": { "label": "Trusted by 25,000+ brands across 40+ countries" },
+  "about": {
+    "eyebrow": "About Media Pro",
+    "heading": "More than a decade of",
+    "accent": "digital marketing",
+    "heading_end": "expertise.",
+    "lede": "Media Pro offers a full suite of digital marketing services — SEO, PPC, social media, and content creation — aimed at driving brand visibility and generating significant conversions.",
+    "bullet_1": "Social Media Strategy",
+    "bullet_2": "Digital Marketing",
+    "cta": "Contact us",
+    "vision_h": "Our Vision",
+    "vision_p": "Create a healthy digital marketing ecosystem that lifts every brand we touch.",
+    "mission_h": "Our Mission",
+    "mission_p": "Stay on the right path of digital marketing — strategic, ethical, and built to last.",
+    "motto_h": "Our Motto",
+    "motto_p": "Make your business 10× more visible and valuable than your competitors."
+  },
+  "services_intro": {
+    "eyebrow": "Our Services",
+    "heading": "Innovative strategies, measurable success.",
+    "lede": "Media Pro's marketing strategies don't follow the playbook — they rewrite it. So your competitors can't predict your next move.",
+    "highlight_h": "98% client satisfaction with proven results",
+    "highlight_p": "We work from experience to consistently deliver outcomes that move the needle.",
+    "cta": "Free Consultation"
+  },
+  "services": {
+    "eyebrow": "What we offer",
+    "heading": "Strategic thinkers, creative doers, your marketing leaders.",
+    "sub": "Six disciplines, one team. Media Pro picks the right mix for each brand — no templates, no guesswork."
+  },
+  "cta": {
+    "eyebrow": "Let's build something",
+    "heading_pre": "Making your brand",
+    "accent": "stand out",
+    "heading_end": "online.",
+    "lede": "Your business will become more widely known, recognised, and remembered — to everyone.",
+    "btn_primary": "Ask More",
+    "btn_secondary": "WhatsApp us"
+  },
+  "stats": { "source": "Source: Media Pro internal data, last updated April 2026" },
+  "why": {
+    "eyebrow": "Why Choose Us",
+    "heading_pre": "The power to transform",
+    "accent": "your digital strategy",
+    "heading_end": ".",
+    "sub": "Four reasons brands stay with Media Pro for years — not months."
+  },
+  "testimonials": {
+    "eyebrow": "Client Feedback & Reviews",
+    "heading": "Marketing solutions tailored for your success.",
+    "growth_1_num": "68%",
+    "growth_1_h": "Business Growth",
+    "growth_1_p": "Many of our clients grow much faster than they planned.",
+    "growth_2_num": "42%",
+    "growth_2_h": "Conversion Lift",
+    "growth_2_p": "Even small brands see substantial conversion gains."
+  },
+  "footer_cta": {
+    "eyebrow": "Get in touch",
+    "heading_pre": "Ready to scale? Bring us your",
+    "accent": "best idea",
+    "heading_end": ".",
+    "btn_primary": "Get Started"
+  },
+  "footer": {
+    "tagline": "A premium digital marketing studio building brands that lead the conversation.",
+    "col_services": "Services",
+    "col_company": "Company",
+    "col_contact": "Contact",
+    "link_terms": "Terms",
+    "link_disclaimer": "Disclaimer",
+    "link_faq": "FAQ",
+    "link_contact": "Contact",
+    "wa_label": "chat now",
+    "copyright": "© 2026 Media Pro Creative Limited. All rights reserved."
+  },
+  "lang_switcher": {
+    "label": "Language",
+    "en": "English",
+    "id": "Indonesia",
+    "ar": "العربية",
+    "zh": "中文"
+  },
+  "contact_page": {
+    "eyebrow": "Contact",
+    "title": "Let's build something",
+    "title_accent": "remarkable",
+    "title_end": ".",
+    "lede": "A real person reads every message. No chatbots, no canned replies.",
+    "card_email": "Email",
+    "card_whatsapp": "WhatsApp",
+    "card_studio": "Studio",
+    "card_studio_value": "Remote-first, global",
+    "form_title": "Tell us about your project",
+    "form_sub": "We respond within 4 working hours. Submitting will pre-fill a WhatsApp message you can review and send.",
+    "label_name": "Name",
+    "label_email": "Email",
+    "label_company": "Company",
+    "label_services": "What services do you need?",
+    "label_budget": "Budget (USD)",
+    "label_timeline": "Timeline",
+    "label_message": "Tell us more",
+    "label_consent_pre": "I agree to the",
+    "label_consent_link": "privacy policy",
+    "label_consent_post": "and consent to being contacted about my inquiry.",
+    "btn_submit": "Send via WhatsApp",
+    "success": "Thanks — we'll be in touch shortly.",
+    "timeline_select": "Select a timeline",
+    "timeline_asap": "As soon as possible",
+    "timeline_1m": "Within 1 month",
+    "timeline_3m": "Within 3 months",
+    "timeline_exploring": "Just exploring"
+  },
+  "faq_page": {
+    "title": "Frequently Asked",
+    "title_accent": "Questions",
+    "lede": "Everything you wanted to know before working with Media Pro. Can't find your answer? Drop us a message — we usually reply within 4 working hours.",
+    "cat_all": "All",
+    "cat_general": "General",
+    "cat_services": "Services",
+    "cat_pricing": "Pricing",
+    "cat_process": "Process",
+    "cat_results": "Results",
+    "still_questions": "Still have questions?",
+    "still_questions_sub": "We respond within 4 working hours.",
+    "contact_us": "Contact us"
+  },
+  "terms_page": {
+    "title": "Terms of",
+    "title_accent": "Service",
+    "lede": "Combined Privacy Policy and Terms of Service. By using mediapro.work or engaging our services, you agree to the policies below.",
+    "last_updated": "Last updated:",
+    "toc_h": "Contents"
+  },
+  "disclaimer_page": {
+    "title": "Important",
+    "title_accent": "Disclaimer",
+    "lede": "Please read this carefully before engaging our digital marketing services.",
+    "last_updated": "Last updated:",
+    "toc_h": "Contents"
+  },
+  "p404": {
+    "eyebrow": "404",
+    "heading": "Lost in the digital noise?",
+    "lede": "The page you were looking for doesn't exist. Let's get you back on track.",
+    "btn": "Back to home"
+  }
+}
