@@ -458,7 +458,7 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
   background:
     radial-gradient(ellipse 60% 40% at 80% 0%, rgba(255, 184, 4, 0.10), transparent 60%),
     radial-gradient(ellipse 70% 50% at 0% 100%, rgba(195, 40, 47, 0.06), transparent 60%),
-    #fff;
+    var(--bg);
 }
 .hero::before {
   width: 520px; height: 520px;
@@ -1062,7 +1062,7 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
     radial-gradient(ellipse at 15% 40%, rgba(195, 40, 47, 0.06), transparent 55%),
     radial-gradient(ellipse at 85% 70%, rgba(255, 184, 4, 0.12), transparent 55%),
     radial-gradient(ellipse at 50% 100%, rgba(210, 164, 24, 0.06), transparent 55%),
-    #fff;
+    var(--bg);
   border-top: 1px solid var(--line);
 }
 .footer-cta .container {
@@ -1324,4 +1324,77 @@ section { padding: clamp(48px, 6vw, 80px) 0; }
 [data-theme="dark"] .nav-sidebar {
   background: var(--bg);
   border-left-color: var(--line);
+}
+
+/* ====== Dark mode: section gradient tints stronger for visibility ======
+   The brand glow gradients (very low alpha) become invisible on dark bg.
+   Boost their alpha so the radial accent still reads. */
+[data-theme="dark"] .hero {
+  background:
+    radial-gradient(ellipse 60% 40% at 80% 0%, rgba(255, 184, 4, 0.07), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 0% 100%, rgba(195, 40, 47, 0.10), transparent 60%),
+    var(--bg);
+}
+[data-theme="dark"] .footer-cta {
+  background:
+    radial-gradient(ellipse at 15% 40%, rgba(195, 40, 47, 0.10), transparent 55%),
+    radial-gradient(ellipse at 85% 70%, rgba(255, 184, 4, 0.08), transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(210, 164, 24, 0.08), transparent 55%),
+    var(--bg);
+}
+[data-theme="dark"] .cta {
+  background:
+    radial-gradient(ellipse at 25% 0%, rgba(255, 184, 4, 0.07), transparent 55%),
+    radial-gradient(ellipse at 75% 100%, rgba(195, 40, 47, 0.10), transparent 55%),
+    radial-gradient(ellipse at 50% 50%, rgba(210, 164, 24, 0.05), transparent 60%),
+    var(--bg-soft);
+}
+
+/* Hero background blur orbs — boost alpha in dark mode */
+[data-theme="dark"] .hero::before {
+  background: radial-gradient(circle, rgba(255, 184, 4, 0.10) 0%, transparent 70%);
+}
+[data-theme="dark"] .hero::after {
+  background: radial-gradient(circle, rgba(210, 164, 24, 0.08) 0%, transparent 70%);
+}
+
+/* Section images in dark mode — soften pure-white app screenshots
+   so they don't visually pop as bright islands. Subtle brightness
+   reduction + slight desaturation harmonizes them with the dark surface. */
+[data-theme="dark"] .hero-phone-image,
+[data-theme="dark"] .phone-stage img,
+[data-theme="dark"] .about-visual img,
+[data-theme="dark"] .services-intro-grid .visual img,
+[data-theme="dark"] .footer-cta .visual img {
+  filter: brightness(0.88) contrast(1.05) saturate(0.95);
+}
+
+/* About visual glow — make the colored backdrop visible against dark bg */
+[data-theme="dark"] .about-visual::before {
+  background:
+    radial-gradient(circle at 30% 40%, rgba(255, 184, 4, 0.14), transparent 60%),
+    radial-gradient(circle at 70% 60%, rgba(210, 164, 24, 0.10), transparent 60%);
+  filter: blur(50px);
+}
+
+/* Highlight box (98% client satisfaction) gradient is barely visible in dark */
+[data-theme="dark"] .highlight-box {
+  background:
+    linear-gradient(135deg, rgba(255, 184, 4, 0.10), rgba(255, 184, 4, 0.03));
+}
+
+/* Form success-msg green tint adapt for dark */
+[data-theme="dark"] .success-msg {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.18), rgba(76, 175, 80, 0.05));
+  border-color: #2A4A2D;
+  color: #7DD884;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="dark"] .phone-stage img,
+  [data-theme="dark"] .about-visual img,
+  [data-theme="dark"] .services-intro-grid .visual img,
+  [data-theme="dark"] .footer-cta .visual img {
+    filter: brightness(0.9);
+  }
 }
