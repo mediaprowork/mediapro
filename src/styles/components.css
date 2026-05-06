@@ -143,7 +143,7 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
 }
 
 .btn-ghost {
-  background: #fff;
+  background: var(--bg);
   color: var(--ink);
   border: 1px solid var(--line-strong);
 }
@@ -308,7 +308,7 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
   width: 280px;
   max-width: calc(100vw - 52px);
   height: 100%;
-  background: #fff;
+  background: var(--bg);
   border-left: 1px solid var(--line);
   box-shadow: -8px 0 48px rgba(0,0,0,.10);
   padding: 56px 0 32px;
@@ -535,7 +535,7 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
   position: absolute;
   display: inline-flex; align-items: center; gap: 7px;
   padding: 8px 12px;
-  background: #fff;
+  background: var(--bg);
   border: 1px solid var(--line);
   border-radius: 999px;
   font-family: var(--font-display);
@@ -604,7 +604,7 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
 .about-bullets .bullet {
   display: flex; align-items: center; gap: 16px;
   padding: 16px 20px;
-  background: #fff;
+  background: var(--bg);
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease;
@@ -662,7 +662,7 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
 }
 @media (max-width: 800px) { .vmm { grid-template-columns: 1fr; } }
 .vmm > div {
-  background: #fff;
+  background: var(--bg);
   padding: 36px 32px;
   display: flex; flex-direction: column; gap: 16px;
   transition: background .3s ease;
@@ -762,7 +762,7 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
 
 .service-card {
   position: relative;
-  background: #fff;
+  background: var(--bg);
   padding: 40px 36px 44px;
   display: flex; flex-direction: column; gap: 20px;
   min-height: 320px;
@@ -860,7 +860,7 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
 .stats {
   padding: clamp(72px, 9vw, 120px) 0;
   position: relative;
-  background: #fff;
+  background: var(--bg);
 }
 .stats .container { position: relative; z-index: 1; }
 .stats-grid {
@@ -875,7 +875,7 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
 }
 @media (max-width: 900px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
 .stat {
-  background: #fff;
+  background: var(--bg);
   padding: 44px 32px;
   display: flex; flex-direction: column; gap: 8px;
   transition: background .3s ease;
@@ -912,7 +912,7 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
 .reason-card {
   position: relative;
   padding: 32px;
-  background: #fff;
+  background: var(--bg);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   display: flex; gap: 22px;
@@ -956,7 +956,7 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
   padding: 32px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: #fff;
+  background: var(--bg);
   display: flex; gap: 22px; align-items: center;
   transition: box-shadow .25s ease;
 }
@@ -1001,7 +1001,7 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
 @media (max-width: 980px) { .testimonials-track { grid-template-columns: 1fr; } }
 
 .testimonial {
-  background: #fff;
+  background: var(--bg);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 32px;
@@ -1125,7 +1125,7 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
 .footer-bottom .socials a {
   width: 36px; height: 36px;
   border: 1px solid var(--line-strong);
-  background: #fff;
+  background: var(--bg);
   border-radius: 50%;
   display: inline-flex; align-items: center; justify-content: center;
   transition: border-color .25s ease, color .25s ease, background .25s ease;
