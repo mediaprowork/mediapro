@@ -11,7 +11,7 @@
   background:
     radial-gradient(ellipse 60% 40% at 80% 0%, rgba(255, 184, 4, 0.10), transparent 60%),
     radial-gradient(ellipse 70% 50% at 0% 100%, rgba(195, 40, 47, 0.05), transparent 60%),
-    #fff;
+    var(--bg);
   border-bottom: 1px solid var(--line);
 }
 .subpage-hero .crumbs {
@@ -64,7 +64,7 @@
 /* Body — long-form prose */
 .subpage-body {
   padding: clamp(48px, 7vw, 96px) 0 clamp(80px, 10vw, 120px);
-  background: #fff;
+  background: var(--bg);
 }
 .subpage-grid {
   display: grid;
@@ -191,7 +191,7 @@
 .faq-cat {
   padding: 8px 16px;
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--bg);
   border-radius: 999px;
   font-family: var(--font-display);
   font-size: 13px;
@@ -202,7 +202,7 @@
 .faq-cat:hover { border-color: var(--red); color: var(--red); }
 .faq-cat.is-active {
   background: var(--ink);
-  color: #fff;
+  color: var(--bg);
   border-color: var(--ink);
 }
 
@@ -279,7 +279,7 @@
 .contact-card {
   display: flex; gap: 18px;
   padding: 22px 24px;
-  background: #fff;
+  background: var(--bg);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
@@ -343,7 +343,7 @@
 /* Form */
 .contact-form {
   padding: 36px;
-  background: #fff;
+  background: var(--bg);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--sh-2);
@@ -384,7 +384,7 @@
   padding: 12px 14px;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
-  background: #fff;
+  background: var(--bg);
   font-family: var(--font-body);
   font-size: 15px;
   color: var(--ink);
@@ -408,7 +408,7 @@
   border-radius: 999px;
   font-family: var(--font-display);
   font-size: 13px;
-  background: #fff;
+  background: var(--bg);
   color: var(--ink-soft);
   cursor: pointer;
   transition: all .2s ease;
@@ -417,7 +417,7 @@
 .pill.is-active {
   background: var(--ink);
   border-color: var(--ink);
-  color: #fff;
+  color: var(--bg);
 }
 
 .submit-row {

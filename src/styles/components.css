@@ -1434,6 +1434,41 @@ section { padding: clamp(48px, 6vw, 80px) 0; }
   color: #7DD884;
 }
 
+/* ====== Dark mode: subpage (terms/disclaimer/faq/contact) ======
+   Boost gradient alphas so brand glow is visible on dark surface. */
+[data-theme="dark"] .subpage-hero {
+  background:
+    radial-gradient(ellipse 60% 40% at 80% 0%, rgba(255, 184, 4, 0.07), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 0% 100%, rgba(195, 40, 47, 0.10), transparent 60%),
+    var(--bg);
+  border-bottom-color: var(--line);
+}
+
+/* Subpage CTA panel uses radial-gradient ending in var(--bg-soft) — already adapts.
+   But if it has any hardcoded gradients ending in #fff, override here.
+   .subpage-cta is defined in subpage.css and uses var(--bg-soft) already. */
+
+/* Form inputs — base bg is var(--bg) which adapts; ensure focus rings stay visible */
+[data-theme="dark"] .field input,
+[data-theme="dark"] .field select,
+[data-theme="dark"] .field textarea {
+  color-scheme: dark;
+}
+
+/* TOC active link: light mode uses --red-soft bg + --red text; in dark mode
+   --red-soft is very dark and barely visible. Strengthen the indicator. */
+[data-theme="dark"] .toc ol a.is-active {
+  background: rgba(224, 56, 64, 0.12);
+  color: var(--red);
+}
+[data-theme="dark"] .toc ol a.is-active::before { color: var(--red); }
+
+/* FAQ open-state toggle: red bg + white text (good in both themes) */
+/* Prose strong + a accents stay the same — already use var(--ink), var(--red) */
+
+/* .prose .callout uses linear-gradient(135deg, rgba(255,184,4,0.10), rgba(255,184,4,0.03))
+   — same alpha palette works on dark bg. No override needed. */
+
 /* ====== Language Switcher ====== */
 .lang-switcher {
   position: relative;
