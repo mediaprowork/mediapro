@@ -17,7 +17,7 @@ const localizedHomeBase = homeBase === '/' && lang !== 'en' ? `/${lang}` : homeB
       <img src="/logo-text.png" alt="Media Pro" width="130" height="43" />
     </a>
 
-    <nav aria-label="Primary navigation">
+    <nav class="nav-center" aria-label="Primary navigation">
       <ul class="nav-links">
         <li><a href={localizedHomeBase} aria-current={active === 'home' ? 'page' : undefined}>{t('nav.home')}</a></li>
         <li><a href={`${localizedHomeBase}#about`} aria-current={active === 'about' ? 'page' : undefined}>{t('nav.about')}</a></li>
@@ -26,12 +26,13 @@ const localizedHomeBase = homeBase === '/' && lang !== 'en' ? `/${lang}` : homeB
       </ul>
     </nav>
 
-    <LangSwitcher currentLang={lang} />
-
-    <a href={contactHref} class="btn btn-primary nav-cta">
-      {t('nav.cta')}
-      <Icon name="arrow-right" size={14} />
-    </a>
+    <div class="nav-right">
+      <LangSwitcher currentLang={lang} />
+      <a href={contactHref} class="btn btn-primary nav-cta">
+        {t('nav.cta')}
+        <Icon name="arrow-right" size={14} />
+      </a>
+    </div>
 
     <!-- Hamburger: two-line minimal design -->
     <button

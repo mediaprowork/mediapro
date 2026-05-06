@@ -191,6 +191,25 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
   padding: 12px var(--gutter);
   gap: 24px;
   transition: padding .35s ease;
+  position: relative;
+}
+
+/* Center nav absolutely so it sits at the visual viewport center
+   regardless of left (logo) or right (lang+CTA) widths */
+.site-header .nav-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Right-side group: lang switcher + Get Started button */
+.site-header .nav-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 .site-header.scrolled .nav-inner {
   padding-top: 8px;
@@ -223,8 +242,6 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
 .nav-links {
   display: flex; gap: 2px; align-items: center;
   list-style: none; margin: 0; padding: 0;
-  flex: 1;
-  justify-content: center;
 }
 .nav-links a {
   display: inline-block;
@@ -418,8 +435,9 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
 /* Show hamburger only on mobile/tablet — sidebar always in DOM */
 @media (max-width: 860px) {
   .nav-links { display: none; }
-  .nav-cta { display: none; }
-  .menu-btn { display: flex; }
+  .nav-center { display: none; }
+  .nav-right { display: none; }
+  .menu-btn { display: flex; margin-left: auto; }
 }
 
 /* Hide sidebar from DOM entirely on desktop */
