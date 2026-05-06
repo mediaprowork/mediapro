@@ -1245,3 +1245,83 @@ section { padding: clamp(48px, 6vw, 80px) 0; }
   .footer-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr; }
 }
+
+/* ====== Floating theme toggle ====== */
+.theme-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1.5px solid var(--line-strong);
+  background: var(--bg);
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--sh-2);
+  transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sh-3);
+  border-color: var(--ink-mute);
+}
+.theme-toggle:active {
+  transform: translateY(0);
+}
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--yellow-dark);
+  outline-offset: 3px;
+}
+
+/* Stack icons in same position; CSS toggles which is visible */
+.theme-icon {
+  position: absolute;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.theme-moon { opacity: 1; transform: rotate(0); }
+.theme-sun  { opacity: 0; transform: rotate(-90deg); color: var(--yellow); }
+
+[data-theme="dark"] .theme-moon { opacity: 0; transform: rotate(90deg); }
+[data-theme="dark"] .theme-sun  { opacity: 1; transform: rotate(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-icon { transition: opacity .01ms ease; transform: none !important; }
+  .theme-toggle { transition: none; }
+}
+
+/* On mobile move toggle slightly inward to avoid OS gestures */
+@media (max-width: 480px) {
+  .theme-toggle { bottom: 16px; right: 16px; width: 40px; height: 40px; }
+}
+
+/* ====== Dark mode component overrides ======
+   These elements use hardcoded rgba/filters that don't auto-flip
+   via CSS variable substitution. */
+
+/* Header glassmorphism — base uses rgba(255,255,255,...) */
+[data-theme="dark"] .site-header {
+  background: rgba(17,17,17,0.72);
+}
+[data-theme="dark"] .site-header.scrolled {
+  background: rgba(17,17,17,0.94);
+  border-bottom-color: var(--line);
+}
+
+/* Footer logo — light mode uses brightness(0) to force black.
+   Dark mode needs invert(1) on top to make it white. */
+[data-theme="dark"] .brand-footer img {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+}
+
+/* Sidebar drawer in dark mode — base background uses #fff hardcoded.
+   Inline white in CSS already, so explicit override needed. */
+[data-theme="dark"] .nav-sidebar {
+  background: var(--bg);
+  border-left-color: var(--line);
+}
