@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "homepage_title": "Media Pro — 全球数字营销机构 | SEO、广告与网站开发",
+    "homepage_desc": "全球高端数字营销机构。提供网站开发、Google 广告、Meta 广告、SEO 与咨询服务。已获 40+ 国家、25,000+ 品牌的信任。",
+    "contact_title": "联系 Media Pro — 免费数字营销咨询",
+    "contact_desc": "联系 Media Pro 获取免费咨询。我们将在 4 个工作小时内回复。",
+    "faq_title": "常见问题 — 数字营销服务 | Media Pro",
+    "faq_desc": "关于 Media Pro 服务的 17 个常见问题解答 — 价格、时间安排、流程。",
+    "terms_title": "服务条款与隐私政策 — Media Pro",
+    "terms_desc": "Media Pro Creative Limited 的服务条款与隐私政策。",
+    "disclaimer_title": "免责声明 — Media Pro 数字营销",
+    "disclaimer_desc": "关于服务保证和限制的重要信息。",
+    "404_title": "页面未找到 — Media Pro",
+    "404_desc": "您查找的页面不存在。"
+  },
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "services": "服务",
+    "contact": "联系",
+    "cta": "立即开始",
+    "skip": "跳到主要内容",
+    "menu_open": "打开菜单",
+    "menu_close": "关闭菜单"
+  },
+  "hero": {
+    "eyebrow": "我们是 Media Pro Creative",
+    "heading": "打造在喧嚣数字世界中",
+    "accent": "脱颖而出",
+    "heading_end": "的品牌。",
+    "lede_strong": "Media Pro 是 2014 年成立的全球数字营销机构。",
+    "lede_rest": "我们通过网站开发、Google 广告、Meta 广告、SEO 和咨询帮助全球品牌成长 — 已获 {brands} 品牌、{countries} 国家信任,客户评分 {rating}。",
+    "btn_primary": "了解更多",
+    "btn_secondary": "免费咨询",
+    "meta_yrs": "行业经验",
+    "meta_brands": "全球品牌信赖",
+    "meta_rating": "客户评分",
+    "chip_engagement": "互动",
+    "chip_conversion": "转化",
+    "chip_reach": "覆盖"
+  },
+  "marquee": { "label": "已获 40+ 国家、25,000+ 品牌的信任" },
+  "about": {
+    "eyebrow": "关于 Media Pro",
+    "heading": "超过十年的",
+    "accent": "数字营销",
+    "heading_end": "专业经验。",
+    "lede": "Media Pro 提供完整的数字营销服务套件 — SEO、PPC、社交媒体和内容创作 — 旨在提升品牌曝光并产生显著转化。",
+    "bullet_1": "社交媒体策略",
+    "bullet_2": "数字营销",
+    "cta": "联系我们",
+    "vision_h": "我们的愿景",
+    "vision_p": "构建一个健康的数字营销生态系统,提升我们触及的每个品牌。",
+    "mission_h": "我们的使命",
+    "mission_p": "坚守数字营销的正道 — 战略、道德、可持续。",
+    "motto_h": "我们的座右铭",
+    "motto_p": "让您的业务比竞争对手更可见、更有价值 10 倍。"
+  },
+  "services_intro": {
+    "eyebrow": "我们的服务",
+    "heading": "创新策略,可衡量的成功。",
+    "lede": "Media Pro 的营销策略不遵循常规 — 我们重新定义。让您的竞争对手无法预测您的下一步。",
+    "highlight_h": "98% 客户满意度,成果可证",
+    "highlight_p": "我们凭借经验持续提供推动业务的成果。",
+    "cta": "免费咨询"
+  },
+  "services": {
+    "eyebrow": "我们提供",
+    "heading": "战略思考者、创意执行者、您的营销领导者。",
+    "sub": "六个领域,一个团队。Media Pro 为每个品牌选择正确的组合 — 无模板,无猜测。"
+  },
+  "cta": {
+    "eyebrow": "一起构建",
+    "heading_pre": "让您的品牌在线",
+    "accent": "脱颖而出",
+    "heading_end": "。",
+    "lede": "您的业务将被更广泛地认识、认可和记住 — 被所有人。",
+    "btn_primary": "了解更多",
+    "btn_secondary": "WhatsApp 联系"
+  },
+  "stats": { "source": "数据来源:Media Pro 内部数据,最后更新于 2026 年 4 月" },
+  "why": {
+    "eyebrow": "为什么选择我们",
+    "heading_pre": "改变",
+    "accent": "您的数字策略",
+    "heading_end": "的力量。",
+    "sub": "品牌与 Media Pro 合作多年的四个原因 — 不是几个月。"
+  },
+  "testimonials": {
+    "eyebrow": "客户反馈与评价",
+    "heading": "为您的成功量身定制的营销解决方案。",
+    "growth_1_num": "68%",
+    "growth_1_h": "业务增长",
+    "growth_1_p": "我们许多客户的增长速度远超他们的计划。",
+    "growth_2_num": "42%",
+    "growth_2_h": "转化提升",
+    "growth_2_p": "即使是小品牌也能获得显著的转化提升。"
+  },
+  "footer_cta": {
+    "eyebrow": "联系我们",
+    "heading_pre": "准备好扩展了吗?把您",
+    "accent": "最好的想法",
+    "heading_end": "带给我们。",
+    "btn_primary": "立即开始"
+  },
+  "footer": {
+    "tagline": "高端数字营销工作室,打造引领对话的品牌。",
+    "col_services": "服务",
+    "col_company": "公司",
+    "col_contact": "联系",
+    "link_terms": "条款",
+    "link_disclaimer": "免责声明",
+    "link_faq": "常见问题",
+    "link_contact": "联系",
+    "wa_label": "立即聊天",
+    "copyright": "© 2026 Media Pro Creative Limited。保留所有权利。"
+  },
+  "lang_switcher": {
+    "label": "语言",
+    "en": "English",
+    "id": "Indonesia",
+    "ar": "العربية",
+    "zh": "中文"
+  },
+  "contact_page": {
+    "eyebrow": "联系",
+    "title": "一起构建",
+    "title_accent": "卓越",
+    "title_end": "。",
+    "lede": "每条消息都由真人阅读。无聊天机器人,无罐头回复。",
+    "card_email": "邮箱",
+    "card_whatsapp": "WhatsApp",
+    "card_studio": "工作室",
+    "card_studio_value": "远程优先,全球",
+    "form_title": "告诉我们您的项目",
+    "form_sub": "我们将在 4 个工作小时内回复。提交将预填写一条 WhatsApp 消息供您审阅和发送。",
+    "label_name": "姓名",
+    "label_email": "邮箱",
+    "label_company": "公司",
+    "label_services": "您需要哪些服务?",
+    "label_budget": "预算(美元)",
+    "label_timeline": "时间安排",
+    "label_message": "更多详情",
+    "label_consent_pre": "我同意",
+    "label_consent_link": "隐私政策",
+    "label_consent_post": "并同意就我的咨询接收联系。",
+    "btn_submit": "通过 WhatsApp 发送",
+    "success": "感谢您 — 我们将很快与您联系。",
+    "timeline_select": "选择时间安排",
+    "timeline_asap": "尽快",
+    "timeline_1m": "1 个月内",
+    "timeline_3m": "3 个月内",
+    "timeline_exploring": "仅在探索"
+  },
+  "faq_page": {
+    "title": "常见",
+    "title_accent": "问题",
+    "lede": "在与 Media Pro 合作之前您想知道的一切。找不到答案?给我们留言 — 我们通常在 4 个工作小时内回复。",
+    "cat_all": "全部",
+    "cat_general": "一般",
+    "cat_services": "服务",
+    "cat_pricing": "价格",
+    "cat_process": "流程",
+    "cat_results": "成果",
+    "still_questions": "还有问题?",
+    "still_questions_sub": "我们将在 4 个工作小时内回复。",
+    "contact_us": "联系我们"
+  },
+  "terms_page": {
+    "title": "服务",
+    "title_accent": "条款",
+    "lede": "合并的隐私政策与服务条款。使用 mediapro.work 或本公司服务即表示您同意以下政策。",
+    "last_updated": "最后更新:",
+    "toc_h": "目录"
+  },
+  "disclaimer_page": {
+    "title": "重要",
+    "title_accent": "免责声明",
+    "lede": "在使用我们的数字营销服务前请仔细阅读。",
+    "last_updated": "最后更新:",
+    "toc_h": "目录"
+  },
+  "p404": {
+    "eyebrow": "404",
+    "heading": "迷失在数字噪音中?",
+    "lede": "您查找的页面不存在。让我们带您回到正轨。",
+    "btn": "返回首页"
+  }
+}
