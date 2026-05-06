@@ -126,3 +126,19 @@ html.theme-transitioning *::after {
     filter           .35s cubic-bezier(.4, 0, .2, 1) !important;
   transition-delay: 0s !important;
 }
+
+/* ====== Locale-specific font families ====== */
+[lang="ar"] body, [lang="ar"] input, [lang="ar"] button, [lang="ar"] textarea {
+  font-family: var(--font-arabic), 'Inter', sans-serif;
+}
+[lang="ar"] .h-display, [lang="ar"] .h-section, [lang="ar"] .eyebrow,
+[lang="ar"] .btn, [lang="ar"] .nav-links a, [lang="ar"] .brand {
+  font-family: var(--font-arabic), 'Space Grotesk', sans-serif;
+}
+[lang="zh"] body, [lang="zh"] input, [lang="zh"] button, [lang="zh"] textarea {
+  font-family: var(--font-cjk), 'Inter', sans-serif;
+}
+[lang="zh"] .h-display, [lang="zh"] .h-section, [lang="zh"] .eyebrow,
+[lang="zh"] .btn, [lang="zh"] .nav-links a, [lang="zh"] .brand {
+  font-family: var(--font-cjk), 'Space Grotesk', sans-serif;
+}

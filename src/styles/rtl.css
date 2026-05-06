@@ -1,0 +1,55 @@
+/* ====== RTL Layout Overrides (Arabic) ======
+   Activated by [dir="rtl"] on <html>. Most layout flips automatically
+   via dir attribute; these rules handle hardcoded left/right and
+   asymmetric flex orderings. */
+
+[dir="rtl"] .eyebrow { flex-direction: row-reverse; }
+[dir="rtl"] .nav-links { flex-direction: row-reverse; }
+[dir="rtl"] .nav-inner { flex-direction: row-reverse; }
+[dir="rtl"] .hero-grid { direction: rtl; }
+[dir="rtl"] .section-head { flex-direction: row-reverse; }
+
+/* Arrow icons in buttons should flip horizontally */
+[dir="rtl"] .btn svg, [dir="rtl"] .btn-link svg { transform: scaleX(-1); }
+
+/* Hamburger button stays right-aligned visually but bars go from left */
+[dir="rtl"] .menu-btn { align-items: flex-start; }
+
+/* Sidebar slides from LEFT in RTL */
+[dir="rtl"] .nav-sidebar {
+  right: auto;
+  left: 0;
+  transform: translateX(-100%);
+  border-left: none;
+  border-right: 1px solid var(--line);
+  box-shadow: 8px 0 48px rgba(0, 0, 0, 0.10);
+}
+[dir="rtl"] .nav-sidebar.is-open { transform: translateX(0); }
+[dir="rtl"] .sidebar-close { right: auto; left: 20px; }
+
+/* TOC sidebar mirrors */
+[dir="rtl"] .subpage-grid { direction: rtl; }
+[dir="rtl"] .toc { text-align: right; }
+[dir="rtl"] .toc ol a { padding: 8px 36px 8px 12px; }
+[dir="rtl"] .toc ol a::before { left: auto; right: 12px; }
+
+/* Numbers (stats, growth) always LTR even in RTL paragraphs */
+[dir="rtl"] .stat .num,
+[dir="rtl"] .growth-card .num,
+[dir="rtl"] .hero-meta .m strong {
+  unicode-bidi: plaintext;
+  direction: ltr;
+}
+
+/* Footer flips */
+[dir="rtl"] .footer-grid { direction: rtl; }
+[dir="rtl"] .footer-bottom { flex-direction: row-reverse; }
+
+/* Lang switcher dropdown opens from LEFT */
+[dir="rtl"] .lang-menu { right: auto; left: 0; }
+
+/* Theme toggle stays at fixed corner — flip side */
+[dir="rtl"] .theme-toggle { right: auto; left: 24px; }
+@media (max-width: 480px) {
+  [dir="rtl"] .theme-toggle { right: auto; left: 16px; }
+}
