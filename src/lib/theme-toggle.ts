@@ -4,13 +4,32 @@ function getCurrentTheme(): Theme {
   return (document.documentElement.getAttribute('data-theme') as Theme) || 'light';
 }
 
-function setTheme(theme: Theme) {
-  document.documentElement.setAttribute('data-theme', theme);
+function persist(theme: Theme) {
   try {
     localStorage.setItem('theme', theme);
   } catch {
     // localStorage may be blocked in private mode — ignore
   }
+}
+
+function applyTheme(theme: Theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  persist(theme);
+}
+
+function setTheme(theme: Theme) {
+  // Use View Transitions API if available — gives a smooth crossfade for free
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (typeof document.startViewTransition === 'function' && !reducedMotion) {
+    document.startViewTransition(() => applyTheme(theme));
+    return;
+  }
+
+  // Fallback: temporary class triggers a wide-net transition rule (see tokens.css)
+  const html = document.documentElement;
+  html.classList.add('theme-transitioning');
+  applyTheme(theme);
+  window.setTimeout(() => html.classList.remove('theme-transitioning'), 400);
 }
 
 const button = document.getElementById('themeToggle');

@@ -98,6 +98,31 @@ html {
 [data-theme="dark"] { color-scheme: dark; }
 [data-theme="light"] { color-scheme: light; }
 
-body {
-  transition: background-color .25s ease, color .25s ease;
+/* ====== Theme transition smoothing ======
+   Chrome/Edge/Safari use View Transitions API for a native crossfade
+   (set up in lib/theme-toggle.ts). The duration is tuned via the
+   ::view-transition-* pseudos below. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: .35s;
+  animation-timing-function: cubic-bezier(.4, 0, .2, 1);
+}
+
+/* Fallback for browsers without View Transitions API (Firefox).
+   theme-toggle.ts adds .theme-transitioning to <html> for ~400ms during toggle,
+   triggering this wide-net transition. Hover transitions are unaffected
+   because this only applies during that brief window. */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition:
+    background-color .35s cubic-bezier(.4, 0, .2, 1),
+    color            .35s cubic-bezier(.4, 0, .2, 1),
+    border-color     .35s cubic-bezier(.4, 0, .2, 1),
+    box-shadow       .35s cubic-bezier(.4, 0, .2, 1),
+    fill             .35s cubic-bezier(.4, 0, .2, 1),
+    stroke           .35s cubic-bezier(.4, 0, .2, 1),
+    filter           .35s cubic-bezier(.4, 0, .2, 1) !important;
+  transition-delay: 0s !important;
 }
