@@ -1,0 +1,102 @@
+---
+import type { Lang } from '~/i18n/index';
+import { useTranslations } from '~/i18n/index';
+
+interface Props { currentLang: Lang }
+const { currentLang } = Astro.props;
+const t = await useTranslations(currentLang);
+
+const LANGS: { code: Lang; label: string }[] = [
+  { code: 'en', label: t('lang_switcher.en') },
+  { code: 'id', label: t('lang_switcher.id') },
+  { code: 'ar', label: t('lang_switcher.ar') },
+  { code: 'zh', label: t('lang_switcher.zh') },
+];
+---
+<div class="lang-switcher" data-current={currentLang}>
+  <button
+    class="lang-trigger"
+    type="button"
+    id="langTrigger"
+    aria-label={t('lang_switcher.label')}
+    aria-haspopup="listbox"
+    aria-expanded="false"
+  >
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="2" y1="12" x2="22" y2="12"/>
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </svg>
+    <span class="lang-code">{currentLang.toUpperCase()}</span>
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </button>
+  <ul class="lang-menu" id="langMenu" role="listbox" aria-label={t('lang_switcher.label')}>
+    {LANGS.map((l) => (
+      <li>
+        <button
+          type="button"
+          class:list={['lang-option', { 'is-current': l.code === currentLang }]}
+          data-lang={l.code}
+          role="option"
+          aria-selected={l.code === currentLang}
+        >
+          <span class="lang-option-code">{l.code.toUpperCase()}</span>
+          <span class="lang-option-name">{l.label}</span>
+          {l.code === currentLang && (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          )}
+        </button>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  const trigger = document.getElementById('langTrigger');
+  const menu = document.getElementById('langMenu');
+
+  function close() {
+    if (!trigger || !menu) return;
+    trigger.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('is-open');
+  }
+  function open() {
+    if (!trigger || !menu) return;
+    trigger.setAttribute('aria-expanded', 'true');
+    menu.classList.add('is-open');
+  }
+
+  trigger?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (menu?.classList.contains('is-open')) close();
+    else open();
+  });
+
+  menu?.querySelectorAll<HTMLButtonElement>('.lang-option').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.lang;
+      if (!target) return;
+      // Persist preference
+      document.cookie = `preferred-lang=${target};path=/;max-age=31536000;SameSite=Lax`;
+      // Build target URL preserving current path
+      const current = window.location.pathname;
+      const cleanPath = current.replace(/^\/(id|ar|zh)/, '') || '/';
+      const newPath = target === 'en' ? cleanPath : `/${target}${cleanPath === '/' ? '' : cleanPath}`;
+      window.location.href = newPath;
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!trigger?.contains(e.target as Node) && !menu?.contains(e.target as Node)) close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu?.classList.contains('is-open')) {
+      close();
+      trigger?.focus();
+    }
+  });
+</script>
