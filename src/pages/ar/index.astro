@@ -1,0 +1,63 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/sections/Hero.astro';
+import Marquee from '~/components/sections/Marquee.astro';
+import About from '~/components/sections/About.astro';
+import ServicesIntro from '~/components/sections/ServicesIntro.astro';
+import Services from '~/components/sections/Services.astro';
+import Cta from '~/components/sections/Cta.astro';
+import Stats from '~/components/sections/Stats.astro';
+import Why from '~/components/sections/Why.astro';
+import Testimonials from '~/components/sections/Testimonials.astro';
+import FooterCta from '~/components/sections/FooterCta.astro';
+import { professionalServiceSchema } from '~/data/schemas/professional-service';
+import { serviceCatalogSchema } from '~/data/schemas/service-catalog';
+import { faqPageSchema } from '~/data/schemas/faq-page';
+import { productReviewSchema } from '~/data/schemas/product-review';
+import { breadcrumbSchema } from '~/data/schemas/breadcrumb';
+import { webPageSchema } from '~/data/schemas/webpage';
+import { serviceOfferSchemas } from '~/data/schemas/services-offer';
+import { SITE } from '~/data/site';
+import { useTranslations } from '~/i18n/index';
+import { getCollection } from 'astro:content';
+
+const lang = 'ar' as const;
+const t = await useTranslations(lang);
+const testimonials = await getCollection('testimonials');
+
+const homepageFaqs = [
+  { question: 'ما خدمات التسويق الرقمي التي تقدمها ميديا برو؟', answer: 'تقدم ميديا برو تطوير الويب، خدمات إعلانات Google، خدمات إعلانات Meta، SEO، التسويق عبر وسائل التواصل الاجتماعي، تسويق المحتوى، التسويق عبر البريد الإلكتروني، التسويق عبر المؤثرين، التحليلات والتقارير، وخدمات الاستشارات.' },
+  { question: 'ما مدى خبرة ميديا برو؟', answer: 'تمتلك ميديا برو أكثر من 10 سنوات من الخبرة في التسويق الرقمي، حيث أنجزت أكثر من 91,000 مشروع لأكثر من 84,000 عميل سعيد بتقييم 4.7.' },
+  { question: 'كيف يمكنني التواصل مع ميديا برو للاستشارة؟', answer: 'يمكنك مراسلتنا على admin@mediapro.work أو التواصل معنا عبر واتساب للحصول على استشارة مجانية. نعمل مع عملاء حول العالم ونرد خلال 4 ساعات عمل.' },
+  { question: 'هل تتعامل ميديا برو مع الشركات الصغيرة؟', answer: 'نعم. حلولنا مرنة وقابلة للتوسع لجميع أحجام الأعمال — من العلامات التجارية الناشئة إلى عملاء الشركات.' },
+];
+
+const schemas = [
+  webPageSchema({ url: `${SITE.url}/ar`, title: t('meta.homepage_title'), description: t('meta.homepage_desc'), speakable: true }),
+  professionalServiceSchema,
+  serviceCatalogSchema,
+  faqPageSchema(homepageFaqs),
+  productReviewSchema(testimonials.map((tt) => ({ quote: tt.data.quote, name: tt.data.name, role: tt.data.role }))),
+  breadcrumbSchema([{ label: t('nav.home'), href: '/ar' }]),
+  ...serviceOfferSchemas,
+];
+---
+<BaseLayout
+  title={t('meta.homepage_title')}
+  description={t('meta.homepage_desc')}
+  active="home"
+  schemas={schemas}
+  preloadHero={true}
+  lang={lang}
+>
+  <Hero lang={lang} />
+  <Marquee lang={lang} />
+  <About lang={lang} />
+  <ServicesIntro lang={lang} />
+  <Services lang={lang} />
+  <Cta lang={lang} />
+  <Stats lang={lang} />
+  <Why lang={lang} />
+  <Testimonials lang={lang} />
+  <FooterCta lang={lang} />
+</BaseLayout>

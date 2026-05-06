@@ -1,0 +1,59 @@
+---
+import SubpageLayout from '~/layouts/SubpageLayout.astro';
+import { TERMS_SECTIONS, TERMS_HERO } from '~/_extracted/terms-sections';
+import { breadcrumbSchema } from '~/data/schemas/breadcrumb';
+import { webPageSchema } from '~/data/schemas/webpage';
+import { SITE } from '~/data/site';
+import { useTranslations } from '~/i18n/index';
+
+const lang = 'ar' as const;
+const t = await useTranslations(lang);
+
+const schemas = [
+  breadcrumbSchema([{ label: t('nav.home'), href: '/ar' }, { label: t('footer.link_terms') }]),
+  webPageSchema({ url: `${SITE.url}/ar/terms`, title: t('meta.terms_title'), description: t('meta.terms_desc') }),
+];
+---
+<SubpageLayout
+  title={t('meta.terms_title')}
+  description={t('meta.terms_desc')}
+  schemas={schemas}
+  pageTitle={`${t('terms_page.title')} <span class="accent">${t('terms_page.title_accent')}</span>`}
+  pageLede={t('terms_page.lede')}
+  crumbs={[{ label: t('nav.home'), href: '/ar' }, { label: t('footer.link_terms') }]}
+  lang={lang}
+>
+  <section class="subpage-body">
+    <div class="container">
+      <div class="subpage-grid">
+        <aside class="toc">
+          <h5>{t('terms_page.toc_h')}</h5>
+          <ol>
+            {TERMS_SECTIONS.map((s) => (
+              <li><a href={`#${s.id}`}>{s.title}</a></li>
+            ))}
+          </ol>
+        </aside>
+
+        <div class="prose">
+          <p style="margin-bottom:32px;color:var(--ink-mute);font-size:13px;">
+            {t('terms_page.last_updated')} <time datetime={TERMS_HERO.lastUpdated}>{TERMS_HERO.lastUpdated}</time>
+          </p>
+          <p style="padding:12px 16px;background:var(--bg-warm);border-left:3px solid var(--yellow);font-size:13px;color:var(--ink-soft);margin-bottom:24px;">
+            ⚖️ The authoritative version of these Terms is in English. النسخة المترجمة متوفرة لسهولة القراءة فقط.
+          </p>
+          {TERMS_SECTIONS.map((s) => (
+            <section id={s.id}>
+              <h2><span class="num">{s.num}</span>{s.title}</h2>
+              <Fragment set:html={s.contentHtml} />
+            </section>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import '~/lib/toc-highlight';
+  </script>
+</SubpageLayout>

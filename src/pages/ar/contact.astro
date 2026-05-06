@@ -1,0 +1,143 @@
+---
+import SubpageLayout from '~/layouts/SubpageLayout.astro';
+import Icon from '~/components/icons/Icon.astro';
+import { breadcrumbSchema } from '~/data/schemas/breadcrumb';
+import { webPageSchema } from '~/data/schemas/webpage';
+import { SITE } from '~/data/site';
+import {
+  CONTACT_CARDS,
+  SERVICE_OPTIONS,
+  BUDGET_OPTIONS,
+} from '~/_extracted/contact-content';
+import { useTranslations } from '~/i18n/index';
+
+const lang = 'ar' as const;
+const t = await useTranslations(lang);
+
+const schemas = [
+  breadcrumbSchema([{ label: t('nav.home'), href: '/ar' }, { label: t('nav.contact') }]),
+  {
+    ...webPageSchema({
+      type: 'ContactPage',
+      url: `${SITE.url}/ar/contact`,
+      title: t('meta.contact_title'),
+      description: t('meta.contact_desc'),
+    }),
+    mainEntity: { '@id': `${SITE.url}/#organization` },
+  },
+];
+const safeIcon = (name: string) => ['email','whatsapp','people','stars','search','heart','data'].includes(name) ? name : 'people';
+---
+<SubpageLayout
+  title={t('meta.contact_title')}
+  description={t('meta.contact_desc')}
+  active="contact"
+  schemas={schemas}
+  pageTitle={`${t('contact_page.title')} <span class="accent">${t('contact_page.title_accent')}</span>${t('contact_page.title_end')}`}
+  pageLede={t('contact_page.lede')}
+  crumbs={[{ label: t('nav.home'), href: '/ar' }, { label: t('nav.contact') }]}
+  lang={lang}
+>
+  <section class="subpage-body">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          {CONTACT_CARDS.map((c) => (
+            <div class="contact-card">
+              <span class="icon-wrap"><Icon name={safeIcon(c.icon)} size={20} /></span>
+              <div>
+                <h4>{
+                  c.label === 'Email' ? t('contact_page.card_email') :
+                  c.label === 'WhatsApp' ? t('contact_page.card_whatsapp') :
+                  t('contact_page.card_studio')
+                }</h4>
+                {c.href ? (
+                  <a href={c.href} target={c.external ? '_blank' : undefined} rel={c.external ? 'noopener noreferrer' : undefined}>{
+                    c.label === 'Studio' ? t('contact_page.card_studio_value') : c.value
+                  }</a>
+                ) : (
+                  <p>{c.label === 'Studio' ? t('contact_page.card_studio_value') : c.value}</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <form id="contactForm" class="contact-form" novalidate>
+          <h3>{t('contact_page.form_title')}</h3>
+          <p>{t('contact_page.form_sub')}</p>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="name">{t('contact_page.label_name')}<span class="req">*</span></label>
+              <input id="name" name="name" type="text" required autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="email">{t('contact_page.label_email')}<span class="req">*</span></label>
+              <input id="email" name="email" type="email" required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="company">{t('contact_page.label_company')}</label>
+            <input id="company" name="company" type="text" autocomplete="organization" />
+          </div>
+
+          <div class="field">
+            <label>{t('contact_page.label_services')}</label>
+            <div class="service-pills">
+              {SERVICE_OPTIONS.map((s) => (
+                <button type="button" class="pill" data-id={s.id}>{s.label}</button>
+              ))}
+            </div>
+          </div>
+
+          <div class="field">
+            <label>{t('contact_page.label_budget')}</label>
+            <div class="budget-pills">
+              {BUDGET_OPTIONS.map((b) => (
+                <button type="button" class="pill" data-id={b.id}>{b.label}</button>
+              ))}
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="timeline">{t('contact_page.label_timeline')}</label>
+            <select id="timeline" name="timeline">
+              <option value="">{t('contact_page.timeline_select')}</option>
+              <option value="asap">{t('contact_page.timeline_asap')}</option>
+              <option value="1m">{t('contact_page.timeline_1m')}</option>
+              <option value="3m">{t('contact_page.timeline_3m')}</option>
+              <option value="exploring">{t('contact_page.timeline_exploring')}</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">{t('contact_page.label_message')}<span class="req">*</span></label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <div class="consent">
+            <input id="consent" name="consent" type="checkbox" required />
+            <label for="consent">
+              {t('contact_page.label_consent_pre')} <a href="/ar/terms">{t('contact_page.label_consent_link')}</a> {t('contact_page.label_consent_post')}
+            </label>
+          </div>
+
+          <div class="submit-row">
+            <button type="submit" class="btn btn-primary">
+              {t('contact_page.btn_submit')}
+              <Icon name="arrow-right" size={14} />
+            </button>
+          </div>
+
+          <div class="success-msg">{t('contact_page.success')}</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import '~/lib/contact-form';
+  </script>
+</SubpageLayout>
