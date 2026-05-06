@@ -1340,15 +1340,15 @@ section { padding: clamp(48px, 6vw, 80px) 0; }
   color: var(--ink-soft);
 }
 [data-theme="dark"] .marquee-track img {
-  /* Preserve original brand colors — give each logo a soft white backdrop
-     so dark/transparent logos remain visible on the dark page surface.
-     Padding + reduced height keeps the visual size consistent with light mode. */
+  /* Preserve original brand colors — soft white backdrop pill makes
+     dark/transparent logos visible on the dark page surface. Logo itself
+     stays at 52px (same as light mode); padding only adds around it. */
   background: rgba(255, 255, 255, 0.95);
-  padding: 6px 14px;
-  border-radius: 8px;
-  height: 40px;
+  padding: 8px 16px;
+  border-radius: 10px;
   filter: none;
-  opacity: 0.85;
+  opacity: 0.9;
+  box-sizing: content-box;
   transition: opacity .25s ease, background .25s ease;
 }
 [data-theme="dark"] .marquee-track img:hover {
