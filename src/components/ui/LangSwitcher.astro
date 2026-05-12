@@ -18,7 +18,7 @@ const LANGS: { code: Lang; label: string }[] = [
     class="lang-trigger"
     type="button"
     id="langTrigger"
-    aria-label={t('lang_switcher.label')}
+    aria-label={`${currentLang.toUpperCase()} — ${t('lang_switcher.label')}`}
     aria-haspopup="listbox"
     aria-expanded="false"
   >
@@ -32,27 +32,25 @@ const LANGS: { code: Lang; label: string }[] = [
       <polyline points="6 9 12 15 18 9"/>
     </svg>
   </button>
-  <ul class="lang-menu" id="langMenu" role="listbox" aria-label={t('lang_switcher.label')}>
+  <div class="lang-menu" id="langMenu" role="listbox" aria-label={t('lang_switcher.label')}>
     {LANGS.map((l) => (
-      <li>
-        <button
-          type="button"
-          class:list={['lang-option', { 'is-current': l.code === currentLang }]}
-          data-lang={l.code}
-          role="option"
-          aria-selected={l.code === currentLang}
-        >
-          <span class="lang-option-code">{l.code.toUpperCase()}</span>
-          <span class="lang-option-name">{l.label}</span>
-          {l.code === currentLang && (
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-          )}
-        </button>
-      </li>
+      <button
+        type="button"
+        class:list={['lang-option', { 'is-current': l.code === currentLang }]}
+        data-lang={l.code}
+        role="option"
+        aria-selected={l.code === currentLang}
+      >
+        <span class="lang-option-code">{l.code.toUpperCase()}</span>
+        <span class="lang-option-name">{l.label}</span>
+        {l.code === currentLang && (
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        )}
+      </button>
     ))}
-  </ul>
+  </div>
 </div>
 
 <script>

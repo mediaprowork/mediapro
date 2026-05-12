@@ -28,9 +28,9 @@ const contactHref = lang === 'en' ? '/contact' : `/${lang}/contact`;
         </a>
         <p class="footer-tag">{t('footer.tagline')}</p>
       </div>
-      <div><h5>{t('footer.col_services')}</h5><ul><li>Web Development</li><li>Google Ads Services</li><li>Meta Ads Services</li><li>Consulting Services</li></ul></div>
-      <div><h5>{t('footer.col_company')}</h5><ul><li><a href={termsHref}>{t('footer.link_terms')}</a></li><li><a href={disclaimerHref}>{t('footer.link_disclaimer')}</a></li><li><a href={faqHref}>{t('footer.link_faq')}</a></li><li><a href={contactHref}>{t('footer.link_contact')}</a></li></ul></div>
-      <div><h5>{t('footer.col_contact')}</h5><ul><li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li><li><a href={waChatUrl} target="_blank" rel="noopener noreferrer">{SITE.phoneDisplay} — {t('footer.wa_label')}</a></li></ul></div>
+      <div><p class="footer-col-title">{t('footer.col_services')}</p><ul><li>Web Development</li><li>Google Ads Services</li><li>Meta Ads Services</li><li>Consulting Services</li></ul></div>
+      <div><p class="footer-col-title">{t('footer.col_company')}</p><ul><li><a href={termsHref}>{t('footer.link_terms')}</a></li><li><a href={disclaimerHref}>{t('footer.link_disclaimer')}</a></li><li><a href={faqHref}>{t('footer.link_faq')}</a></li><li><a href={contactHref}>{t('footer.link_contact')}</a></li></ul></div>
+      <div><p class="footer-col-title">{t('footer.col_contact')}</p><ul><li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li><li><a href={waChatUrl} target="_blank" rel="noopener noreferrer">{SITE.phoneDisplay} — {t('footer.wa_label')}</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span>{t('footer.copyright')}</span>
