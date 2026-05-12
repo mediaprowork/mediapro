@@ -1,5 +1,6 @@
 ---
 import Icon from '~/components/icons/Icon.astro';
+import LazyImage from '~/components/ui/LazyImage.astro';
 import { SITE } from '~/data/site';
 import type { Lang } from '~/i18n/index';
 import { useTranslations } from '~/i18n/index';
@@ -14,7 +15,13 @@ const localizedHomeBase = homeBase === '/' && lang !== 'en' ? `/${lang}` : homeB
 <header class="site-header" role="banner">
   <div class="nav-inner">
     <a href={localizedHomeBase} class="brand" aria-label={`${SITE.name} — Home`}>
-      <img src="/logo-text.png" alt="Media Pro" width="130" height="43" />
+      <LazyImage
+        src="/logo-text.webp"
+        alt="Media Pro"
+        width={130}
+        height={43}
+        loading="eager"
+      />
     </a>
 
     <nav class="nav-center" aria-label="Primary navigation">

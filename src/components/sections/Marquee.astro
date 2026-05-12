@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import LazyImage from '~/components/ui/LazyImage.astro';
 import type { Lang } from '~/i18n/index';
 import { useTranslations } from '~/i18n/index';
 interface Props { lang?: Lang }
@@ -15,11 +16,12 @@ const tripled = [...logos, ...logos, ...logos];
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
       {tripled.map((logo) => (
-        <img
+        <LazyImage
           src={logo.data.src}
           alt={`${logo.data.alt} — Media Pro client logo`}
           loading="lazy"
-          height="52"
+          height={52}
+          width={120}
         />
       ))}
     </div>

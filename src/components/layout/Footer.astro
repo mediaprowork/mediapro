@@ -1,5 +1,6 @@
 ---
 import Icon from '~/components/icons/Icon.astro';
+import LazyImage from '~/components/ui/LazyImage.astro';
 import { SITE, waUrl } from '~/data/site';
 import type { Lang } from '~/i18n/index';
 import { useTranslations } from '~/i18n/index';
@@ -18,7 +19,12 @@ const contactHref = lang === 'en' ? '/contact' : `/${lang}/contact`;
     <div class="footer-grid">
       <div>
         <a href={homeHref} class="brand brand-footer" aria-label="Media Pro — Home">
-          <img src="/logo-text.png" alt="Media Pro" width="120" height="40" loading="lazy" />
+          <LazyImage
+            src="/logo-text.webp"
+            alt="Media Pro"
+            width={120}
+            height={40}
+          />
         </a>
         <p class="footer-tag">{t('footer.tagline')}</p>
       </div>

@@ -1,6 +1,7 @@
 ---
 import Reveal from '~/components/ui/Reveal.astro';
 import Icon from '~/components/icons/Icon.astro';
+import LazyImage from '~/components/ui/LazyImage.astro';
 import { getCollection } from 'astro:content';
 import type { Lang } from '~/i18n/index';
 import { useTranslations } from '~/i18n/index';
@@ -49,7 +50,13 @@ const testimonials = await getCollection('testimonials');
           <div class="testimonial">
             <p>{tl.data.quote}</p>
             <div class="testimonial-author">
-              <img src={tl.data.img} alt={tl.data.name} width="44" height="44" loading="lazy" />
+              <LazyImage
+                src={tl.data.img}
+                alt={tl.data.name}
+                width={44}
+                height={44}
+                wrapperClass="avatar-skeleton"
+              />
               <div>
                 <strong>{tl.data.name}</strong>
                 <span>{tl.data.role}</span>

@@ -31,8 +31,23 @@ const waStartUrl = waUrl(`Hi Media Pro, I'm ready to scale and I'd like to get s
       </Reveal>
     </div>
     <Reveal delay={2} class="visual">
-      <img class="img-light" src="/images/footer-cta.png" alt="Grow with Media Pro" loading="lazy" width="500" height="500" />
-      <img class="img-dark" src="/images/footer-cta-dark.png" alt="Grow with Media Pro" loading="lazy" width="500" height="500" />
+      <div class="lazy-img">
+        <picture>
+          <source
+            srcset="/images/footer-cta-dark.webp"
+            media="(prefers-color-scheme: dark)"
+          />
+          <img
+            src="/images/footer-cta.webp"
+            alt="Grow with Media Pro"
+            width="500"
+            height="500"
+            loading="lazy"
+            decoding="async"
+            onload="this.closest('.lazy-img').classList.add('loaded')"
+          />
+        </picture>
+      </div>
     </Reveal>
   </div>
 </section>
