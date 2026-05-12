@@ -1058,6 +1058,10 @@ section { padding: clamp(72px, 9vw, 130px) 0; position: relative; }
   width: 44px; height: 44px; border-radius: 50%;
   object-fit: cover;
 }
+.testimonial-author .avatar-skeleton {
+  border-radius: 50%;
+  flex-shrink: 0;
+}
 .testimonial-author strong {
   font-family: var(--font-display);
   font-weight: 600;
@@ -1407,11 +1411,6 @@ section { padding: clamp(48px, 6vw, 80px) 0; }
   background: radial-gradient(circle, rgba(210, 164, 24, 0.08) 0%, transparent 70%);
 }
 
-/* Image variants — show -dark asset when theme is dark, hide light variant.
-   Stack two <img> tags in markup (img-light + img-dark), CSS toggles display. */
-.img-dark { display: none; }
-[data-theme="dark"] .img-light { display: none; }
-[data-theme="dark"] .img-dark { display: block; }
 
 /* About visual glow — make the colored backdrop visible against dark bg */
 [data-theme="dark"] .about-visual::before {
