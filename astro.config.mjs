@@ -56,7 +56,7 @@ export default defineConfig({
       weights: [400, 500, 600, 700],
       subsets: ['latin'],
       styles: ['normal'],
-      display: 'swap',
+      display: 'optional',
     },
     {
       provider: fontProviders.google(),
@@ -65,7 +65,7 @@ export default defineConfig({
       weights: [300, 400, 500, 600, 700],
       subsets: ['latin'],
       styles: ['normal'],
-      display: 'swap',
+      display: 'optional',
     },
     {
       provider: fontProviders.google(),
@@ -74,7 +74,7 @@ export default defineConfig({
       weights: [400, 500, 600, 700],
       subsets: ['arabic'],
       styles: ['normal'],
-      display: 'swap',
+      display: 'optional',
     },
     {
       provider: fontProviders.google(),
@@ -83,7 +83,7 @@ export default defineConfig({
       weights: [400, 500, 700],
       subsets: ['chinese-simplified'],
       styles: ['normal'],
-      display: 'swap',
+      display: 'optional',
     },
   ],
 
