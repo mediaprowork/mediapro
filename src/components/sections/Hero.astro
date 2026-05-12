@@ -74,25 +74,22 @@ const waHeroUrl = waUrl(`Hi Media Pro, I'd like to schedule a free consultation.
           <span>{t('hero.chip_reach')} <span class="red">2.4M</span></span>
         </div>
 
-        <div class="lazy-img">
-          <picture>
-            <source
-              srcset="/images/hero-phone-dark.webp"
-              media="(prefers-color-scheme: dark)"
-            />
-            <img
-              class="phone"
-              src="/images/hero-phone.webp"
-              alt="Media Pro digital marketing dashboard preview on mobile"
-              width="320"
-              height="640"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-              onload="this.closest('.lazy-img').classList.add('loaded')"
-            />
-          </picture>
-        </div>
+        <picture>
+          <source
+            srcset="/images/hero-phone-dark.webp"
+            media="(prefers-color-scheme: dark)"
+          />
+          <img
+            class="phone"
+            src="/images/hero-phone.webp"
+            alt="Media Pro digital marketing dashboard preview on mobile"
+            width="320"
+            height="640"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
       </Reveal>
     </div>
   </div>

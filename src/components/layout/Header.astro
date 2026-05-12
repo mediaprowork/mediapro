@@ -15,13 +15,7 @@ const localizedHomeBase = homeBase === '/' && lang !== 'en' ? `/${lang}` : homeB
 <header class="site-header" role="banner">
   <div class="nav-inner">
     <a href={localizedHomeBase} class="brand" aria-label={`${SITE.name} — Home`}>
-      <LazyImage
-        src="/logo-text.webp"
-        alt="Media Pro"
-        width={130}
-        height={43}
-        loading="eager"
-      />
+      <img src="/logo-text.webp" alt="Media Pro" width="130" height="43" />
     </a>
 
     <nav class="nav-center" aria-label="Primary navigation">
